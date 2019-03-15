@@ -48,7 +48,7 @@
         position: absolute;
         top: 5px;
         left: calc(50% - 25px);
-        opacity: .2;
+        opacity: .1;
         display: none;
     }
 
