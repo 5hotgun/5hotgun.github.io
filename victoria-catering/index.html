@@ -19,13 +19,14 @@
     <link rel="stylesheet" href="./assets/css/logo.css">
     <link rel="stylesheet" href="./assets/css/header-navigation.css">
     <link rel="stylesheet" href="./assets/css/call-modal.css">
+    <link rel="stylesheet" href="./assets/css/menu-modal.css">
 </head>
 <body>
     <header>
         <div class="header-inner">
             <!-- Menu button -->
-            <div class="menu-button">
-                <i class="fas fa-bars"></i>
+            <div class="menu-button" onclick="showMenuModal();">
+                <i class="fas fa-bars" id="menuTrigger"></i>
             </div>
             <!-- Logo -->
             <div class="logo-container">
@@ -85,16 +86,29 @@
                     </fieldset>
                 </form>
             </div>
-            <div class="call-modal-title">
-                <p class="call-title-main">Или</p>
+            <div class="call-modal-bottom">
+                <div class="call-modal-title">
+                    <p class="call-title-main">Или</p>
+                </div>
+                <div class="call-link">
+                    <a href="tel:+77019955604">Позвонить</a>
+                </div>
             </div>
-            <div class="call-link">
-                <a href="tel:+77019955604">Позвонить</a>
+        </div>
+        <!-- Menu Aside -->
+        <div class="menu-modal transition">
+            <div class="menu-modal-container">
+                <ul class="aside-menu-navigation">
+                    <li><a href="#">Меню</a> </li>
+                    <li><a href="#">Галерея</a> </li>
+                    <li><a href="#">О нас</a> </li>
+                    <li><a href="#">Контакты</a> </li>
+                </ul>
             </div>
         </div>
     </header>
 
-    <!-- Menu Aside -->
+
 
 
 
@@ -112,5 +126,6 @@
     <script src="./vendor/jquery-3.3.1.min.js"></script>
     <!-- JS -->
     <script src="./assets/js/callModal.js"></script>
+    <script src="./assets/js/menuModal.js"></script>
 </body>
 </html>

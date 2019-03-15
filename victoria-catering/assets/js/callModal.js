@@ -5,4 +5,4 @@ const showCallModal = () => {
     $('.call-button-inner').css('transform', `translateX(${callButtonPosition}%)`);
     $('.call-modal').css('right', `${callModalPosition}%`);
     callModalClosed = !callModalClosed;
-}
+};

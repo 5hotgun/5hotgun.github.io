@@ -59,7 +59,8 @@
     background-color: #fff;
     border-left: 1px solid #ddd;
     padding: 35px 100px 0 70px;
-    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
     z-index: 11;
 }
 
@@ -90,13 +91,14 @@
 
     fieldset {
         width: 100%;
-        margin: 10px 0;
+        margin: 15px 0;
     }
 
     select {
         width: 100%;
         padding: 10px 5px;
-        box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+                box-sizing: border-box;
         border: 1px solid #ddd;
         border-radius: 5px;
         outline: none;
@@ -107,7 +109,8 @@
     input {
         width: 100%;
         padding: 10px 5px;
-        box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+                box-sizing: border-box;
         border: 1px solid #ddd;
         border-radius: 5px;
         outline: none;
@@ -118,7 +121,8 @@
     button {
         width: 100%;
         padding: 10px 5px;
-        box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+                box-sizing: border-box;
         border: 1px solid #ddd;
         border-radius: 5px;
         outline: none;
@@ -128,13 +132,18 @@
         font-size: 18px;
     }
 
+    .call-modal-bottom {
+        display: none;
+    }
+
     .call-link {
         width: 100%;
         margin-top: 30px;
         background-color: #46415f;
         border-radius: 5px;
         padding: 10px 5px;
-        box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+                box-sizing: border-box;
         text-align: center;
     }
 
@@ -171,5 +180,9 @@
             .call-modal {
                 width: 100%;
                 padding: 20px 40px 0 40px;
+            }
+
+            .call-modal-bottom {
+                display: block;
             }
         }

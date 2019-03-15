@@ -27,6 +27,9 @@ header {
         -ms-flex-pack: start;
             justify-content: flex-start;
     position: relative;
+    -webkit-box-shadow: 0px 1px 10px 0px rgba(36,36,36,0.75);
+    -moz-box-shadow: 0px 1px 10px 0px rgba(36,36,36,0.75);
+    box-shadow: 0px 1px 10px 0px rgba(36,36,36,0.75);
 }
 
     .menu-button {
@@ -55,5 +58,11 @@ header {
 
         .menu-button {
             display: block;
+        }
+    }
+
+    @media screen and (max-width: 320px) {
+        .header-inner {
+            padding: 0 10px;
         }
     }
