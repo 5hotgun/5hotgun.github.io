@@ -1,0 +1,22 @@
+/*
+Background Color:       #f9f9f9;
+Main Color:             #343148;
+Sub Color:              #46415f;
+
+ */
+
+
+body {
+    min-height: 2000px;
+    background-color: #f9f9f9;
+    font-family: "Roboto";
+}
+
+main {
+    padding-top: 70px;
+}
+
+.transition {
+    -webkit-transition: all ease-in .3s;
+    transition: all ease-in .2s;
+}
