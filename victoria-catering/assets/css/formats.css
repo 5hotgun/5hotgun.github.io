@@ -102,7 +102,9 @@
     }
 
     .decor-square {
-        display: none;
+        height: 400px;
+        top: 140px;
+        left: 0;
     }
 
     .decor-image {
@@ -112,7 +114,7 @@
 
     .formats-description {
         /* width: 100%; */
-        margin-top: 30px;
+        margin-top: 100px;
         margin-left: 0;
         padding: 0 30px;
         box-sizing: border-box;
@@ -128,6 +130,11 @@
         width: 300px;
         height: 450px;
     }
+
+    .decor-square {
+        top: 80px;
+        left: 10px;
+    }
 }
 
 @media screen and (max-width: 320px) {
@@ -135,5 +142,10 @@
         width: 280px;
         height: 400px;
         margin: 0;
+    }
+
+    .decor-square {
+        top: 30px;
+        left: -10px;
     }
 }
