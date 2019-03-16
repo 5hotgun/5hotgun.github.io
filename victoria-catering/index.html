@@ -20,6 +20,7 @@
     <link rel="stylesheet" href="./assets/css/header-navigation.css">
     <link rel="stylesheet" href="./assets/css/call-modal.css">
     <link rel="stylesheet" href="./assets/css/menu-modal.css">
+    <link rel="stylesheet" href="./assets/css/hero-image.css">
 </head>
 <body>
     <header>
@@ -44,9 +45,9 @@
             <!-- Navigation -->
             <nav>
                 <ul class="navigation-list">
-                    <li><a href="#">Меню</a> </li>
-                    <li><a href="#">Галерея</a> </li>
+                    <li><a href="#">Форматы</a> </li>
                     <li><a href="#">О нас</a> </li>
+                    <li><a href="#">Галерея</a> </li>
                     <li><a href="#">Контакты</a> </li>
                 </ul>
             </nav>
@@ -65,14 +66,14 @@
         <!-- Call request modal -->
         <div class="call-modal transition">
             <div class="call-modal-title">
-                <p class="call-title-main">Закажите звонок</p>
+                <p class="call-title-main">Оставьте заявку</p>
                 <p class="call-title-sub">Перезвоним через <span>27</span> секунд</p>
             </div>
             <div class="call-modal-form">
                 <form action="form.php">
                     <fieldset>
                         <select class="" name="">
-                            <option disabled selected hidden>Выберите меню</option>
+                            <option disabled selected hidden>Выберите формат</option>
                             <option value="">Фуршет</option>
                             <option value="">Кофе-брейк</option>
                             <option value="">Банкет</option>
@@ -99,9 +100,9 @@
         <div class="menu-modal transition">
             <div class="menu-modal-container">
                 <ul class="aside-menu-navigation">
-                    <li><a href="#">Меню</a> </li>
-                    <li><a href="#">Галерея</a> </li>
+                    <li><a href="#">Форматы</a> </li>
                     <li><a href="#">О нас</a> </li>
+                    <li><a href="#">Галерея</a> </li>
                     <li><a href="#">Контакты</a> </li>
                 </ul>
             </div>
@@ -113,7 +114,13 @@
 
 
     <main>
-
+        <section class="hero-image">
+            <div class="hero-text">
+                <h1>Lorem ipsum dolor sit amet, consectetur adipisicing el</h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing ellor sit amet</p>
+                <a onclick="showCallModal();" class="transition">Оставить заявку</a>
+            </div>
+        </section>
     </main>
 
     <footer>

@@ -12,7 +12,18 @@ body {
     font-family: "Roboto";
 }
 
+main {
+    padding-top: 70px;
+}
+
 .transition {
-    -webkit-transition: all ease-in .3s;
-    transition: all ease-in .2s;
+    -webkit-transition: all linear .2s;
+    transition: all linear .2s;
+}
+
+
+@media screen and (max-width: 1024px) {
+    main {
+        padding-top: 60px;
+    }
 }
