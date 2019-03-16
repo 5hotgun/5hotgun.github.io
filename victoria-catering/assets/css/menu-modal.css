@@ -1,7 +1,7 @@
 .menu-modal {
     display: none;
     height: calc(100vh - 60px);
-    background-color: #46415f;
+    background-color: #f9f9f9;
     position: absolute;
     top: 60px;
     left: -100%;
@@ -19,16 +19,6 @@
         justify-content: flex-start;
     }
 
-        .menu-modal-button {
-            width: 25px;
-            font-size: 25px;
-            color: #fff;
-        }
-
-        .menu-logo {
-            display: none;
-        }
-
         .aside-menu-navigation {
             margin: 15px 0;
         }
@@ -40,7 +30,7 @@
 
             .aside-menu-navigation li a {
                 text-decoration: none;
-                color: #fff;
+                color: #343148;
                 font-size: 20px;
             }
 
