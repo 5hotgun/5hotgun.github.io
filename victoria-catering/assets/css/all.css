@@ -2,12 +2,13 @@
 Background Color:       #f9f9f9;
 Main Color:             #343148;
 Sub Color:              #46415f;
+Green:                  #79b515;
 
  */
 
 
 body {
-    min-height: 2000px;
+    min-height: 10000px;
     background-color: #f9f9f9;
     font-family: "Roboto";
 }

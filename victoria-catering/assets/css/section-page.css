@@ -1,0 +1,36 @@
+.section-page {
+    width: 1000px;
+    padding-top: 100px;
+    margin: 0 auto;
+}
+
+.section-title {
+    width: 300px;
+}
+
+.section-title h2 {
+    font-size: 48px;
+    color: #46415f;
+
+}
+
+    .section-title h2 span {
+        color: #79b515;
+    }
+
+
+@media screen and (max-width: 1024px) {
+    .section-page {
+        width: 100%;
+    }
+
+    .section-title {
+        margin-left: 30px;
+    }
+}
+
+@media screen and (max-width: 650px) {
+    .section-title {
+        margin: 0 auto;
+    }
+}
