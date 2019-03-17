@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="./vendor/reset.min.css">
     <link rel="stylesheet" href="vendor/fonts/fonts.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link rel="stylesheet" href="./vendor/owl.carousel.min.css">
     <!-- CSS -->
     <link rel="stylesheet" href="./assets/css/all.css">
     <link rel="stylesheet" href="./assets/css/header.css">
@@ -48,7 +49,7 @@
             <!-- Navigation -->
             <nav>
                 <ul class="navigation-list">
-                    <li><a href="#">Форматы</a> </li>
+                    <li><a href="#">Цены</a> </li>
                     <li><a href="#">О нас</a> </li>
                     <li><a href="#">Галерея</a> </li>
                     <li><a href="#">Контакты</a> </li>
@@ -103,7 +104,7 @@
         <div class="menu-modal transition">
             <div class="menu-modal-container">
                 <ul class="aside-menu-navigation">
-                    <li><a href="#">Форматы</a> </li>
+                    <li><a href="#">Цены</a> </li>
                     <li><a href="#">О нас</a> </li>
                     <li><a href="#">Галерея</a> </li>
                     <li><a href="#">Контакты</a> </li>
@@ -119,12 +120,20 @@
     <main>
         <!-- Section Hero Image -->
         <section class="hero-image">
-            <div class="hero-text">
-                <h1>Потрясающая еда по доступным ценам!</h1>
-                <p>Изысканная кухня и фантастическая забота о клиентах</p>
-                <a onclick="showCallModal();" class="transition">Оставить заявку</a>
-            </div>
+            <section class="section-page">
+                <div class="hero-text">
+                    <h1>Потрясающая еда по доступным ценам!</h1>
+                    <p>Изысканная кухня и фантастическая забота о клиентах</p>
+                    <a onclick="showCallModal();" class="transition">Оставить заявку</a>
+                </div>
+            </section>
+
         </section>
+
+        <!-- Format Modal -->
+        <div class="format-modal">
+
+        </div>
 
         <!-- Formats Section -->
         <section class="section-page">
@@ -132,39 +141,164 @@
                 <h2>Всегда свежая и <span>вкусная</span> еда!</h2>
             </div>
             <div class="formats-container">
-                <div class="decor-wrap">
-                    <div class="decor-image-left"></div>
-                    <div class="decor-square-left"></div>
+                <div class="formats-title">
+                    <p>Форматы мероприятий</p>
                 </div>
-                <div class="formats-description">
-                    <p>Наши форматы</p>
-                    <ul>
-                        <li> Фуршет </li>
-                        <li> Шведский стол </li>
-                        <li> Кофе-брейк </li>
-                        <li> Коктейль-бар </li>
-                        <li> Брускета-бар </li>
-                        <li> Пикник </li>
-                        <li> Барбекю </li>
-                        <li> Банкет </li>
-                    </ul>
+                <div class="formats-wrapper">
+                    <div class="format-item">
+                        <div class="format-image" style="background-image: url('assets/img/formats/1.jpg')"></div>
+                        <div class="format-name">
+                            Фуршет
+                            <p class="format-price">от 490 руб</p>
+                        </div>
+                        <div class="format-description">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                        </div>
+                        <div class="format-link">
+                            Смотреть меню
+                        </div>
+                    </div>
+                    <div class="format-item">
+                        <div class="format-image" style="background-image: url('assets/img/formats/2.jpg')"></div>
+                        <div class="format-name">
+                            Шведский стол
+                            <p class="format-price">от 490 руб</p>
+                        </div>
+                        <div class="format-description">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                        </div>
+                        <div class="format-link">
+                            Смотреть меню
+                        </div>
+                    </div>
+                    <div class="format-item">
+                        <div class="format-image" style="background-image: url('assets/img/formats/3.jpg')"></div>
+                        <div class="format-name">
+                            Кофе-брейк
+                            <p class="format-price">от 490 руб</p>
+                        </div>
+                        <div class="format-description">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                        </div>
+                        <div class="format-link">
+                            Смотреть меню
+                        </div>
+                    </div>
+                    <div class="format-item">
+                        <div class="format-image" style="background-image: url('assets/img/formats/4.jpg')"></div>
+                        <div class="format-name">
+                            Коктейль-бар
+                            <p class="format-price">от 490 руб</p>
+                        </div>
+                        <div class="format-description">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                        </div>
+                        <div class="format-link">
+                            Смотреть меню
+                        </div>
+                    </div>
+                    <div class="format-item">
+                        <div class="format-image" style="background-image: url('assets/img/formats/5.jpg')"></div>
+                        <div class="format-name">
+                            Пикник
+                            <p class="format-price">от 490 руб</p>
+                        </div>
+                        <div class="format-description">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                        </div>
+                        <div class="format-link">
+                            Смотреть меню
+                        </div>
+                    </div>
+                    <div class="format-item">
+                        <div class="format-image" style="background-image: url('assets/img/formats/6.jpg')"></div>
+                        <div class="format-name">
+                            Банкет
+                            <p class="format-price">от 490 руб</p>
+                        </div>
+                        <div class="format-description">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                        </div>
+                        <div class="format-link">
+                            Смотреть меню
+                        </div>
+                    </div>
                 </div>
-            </div>
-            <div class="menus-container">
-                <div class="menus-description">
-                    <p>Кейтеринг меню</p>
-                    <ul>
-                        <li> Завтраки </li>
-                        <li> Напитки </li>
-                        <li> Закуски </li>
-                        <li> Выпечка </li>
-                        <li> Десерты </li>
-                    </ul>
-                </div>
-                <div class="decor-wrap">
-                    <div class="decor-image-right"></div>
-                    <div class="decor-square-right"></div>
-                </div>
+                <!-- <div class="owl-carousel">
+                    <div class="format-item">
+                        <div class="format-image" style="background-image: url('assets/img/formats/1.jpg')"></div>
+                        <div class="format-name">
+                            Фуршет
+                            <p class="format-price">от 490 руб</p>
+                        </div>
+                        <div class="format-description">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                        </div>
+                        <div class="format-link">
+                            Смотреть меню
+                        </div>
+                    </div>
+                    <div class="format-item">
+                        <div class="format-image" style="background-image: url('assets/img/formats/2.jpg')"></div>
+                        <div class="format-name">
+                            Шведский стол
+                        </div>
+                        <div class="format-description">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                        </div>
+                        <div class="format-link">
+                            Смотреть меню
+                        </div>
+                    </div>
+                    <div class="format-item">
+                        <div class="format-image" style="background-image: url('assets/img/formats/3.jpg')"></div>
+                        <div class="format-name">
+                            Кофе-брейк
+                        </div>
+                        <div class="format-description">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                        </div>
+                        <div class="format-link">
+                            Смотреть меню
+                        </div>
+                    </div>
+                    <div class="format-item">
+                        <div class="format-image" style="background-image: url('assets/img/formats/4.jpg')"></div>
+                        <div class="format-name">
+                            Коктейль-бар
+                        </div>
+                        <div class="format-description">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                        </div>
+                        <div class="format-link">
+                            Смотреть меню
+                        </div>
+                    </div>
+                    <div class="format-item">
+                        <div class="format-image" style="background-image: url('assets/img/formats/5.jpg')"></div>
+                        <div class="format-name">
+                            Пикник
+                        </div>
+                        <div class="format-description">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                        </div>
+                        <div class="format-link">
+                            Смотреть меню
+                        </div>
+                    </div>
+                    <div class="format-item">
+                        <div class="format-image" style="background-image: url('assets/img/formats/6.jpg')"></div>
+                        <div class="format-name">
+                            Банкет
+                        </div>
+                        <div class="format-description">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                        </div>
+                        <div class="format-link">
+                            Смотреть меню
+                        </div>
+                    </div>
+                </div> -->
             </div>
         </section>
 
@@ -178,8 +312,10 @@
 
     <!-- JS Vendor -->
     <script src="./vendor/jquery-3.3.1.min.js"></script>
+    <script src="./vendor/owl.carousel.min.js"></script>
     <!-- JS -->
     <script src="./assets/js/callModal.js"></script>
     <script src="./assets/js/menuModal.js"></script>
+    <script src="./assets/js/carousel.js"></script>
 </body>
 </html>
