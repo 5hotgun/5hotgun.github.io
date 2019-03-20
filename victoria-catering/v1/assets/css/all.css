@@ -1,0 +1,19 @@
+/*
+Background Color:       #f9f9f9;
+Main Color:             #343148;
+Sub Color:              #46415f;
+Green:                  #79b515;
+
+ */
+
+
+body {
+    /* min-height: 10000px; */
+    background-color: #fff;
+    font-family: "Roboto";
+}
+
+.transition {
+    -webkit-transition: all ease-in-out .2s;
+    transition: all ease-in-out .2s;
+}

@@ -1,0 +1,111 @@
+footer {
+    width: 100%;
+    background-color: #292929;
+}
+
+    .footer-container {
+        width: 1200px;
+        margin: 0 auto;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: row;
+                flex-direction: row;
+        -webkit-box-align: start;
+            -ms-flex-align: start;
+                align-items: flex-start;
+        -ms-flex-pack: distribute;
+            justify-content: space-around;
+        padding-top: 60px;
+    }
+
+    .footer-column {
+        max-width: 260px;
+        font-size: 16px;
+    }
+
+    .footer-column:last-child {
+        margin-right: 0;
+    }
+
+        .footer-column ul li {
+            margin-bottom: 10px;
+            color: #fff;
+        }
+
+        .footer-column p {
+            color: #fff;
+            margin-bottom: 5px;
+            line-height: 1.4em;
+        }
+
+        .footer-column a {
+            text-decoration: none;
+            color: #fff;
+            -webkit-transition: linear .2s;
+            transition: linear .2s;
+        }
+
+        .footer-column a:hover {
+            color: #79b515;
+        }
+
+    .social-links {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
+        -webkit-box-pack: start;
+            -ms-flex-pack: start;
+                justify-content: flex-start;
+    }
+
+        .social-item {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            margin-right: 10px;
+            background-color: #fff;
+        }
+
+        .social-item:last-child {
+            margin-right: 0;
+        }
+
+        .social-item img {
+            width: 100%;
+        }
+
+    .footer-copyright {
+        text-align: center;
+        color: #656565;
+        font-size: 16px;
+        padding: 30px 0;
+    }
+
+@media screen and (max-width: 1200px) {
+    .footer-container {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .footer-container {
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column;
+        padding-left: 30px;
+        -webkit-box-sizing: border-box;
+                box-sizing: border-box;
+    }
+
+    .footer-column {
+        margin-bottom: 30px;
+    }
+}

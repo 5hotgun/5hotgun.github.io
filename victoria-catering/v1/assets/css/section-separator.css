@@ -1,0 +1,111 @@
+.separator {
+    width: 100%;
+    height: 500px;
+    background-image: url('../img/separator-1.jpg');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    position: relative;
+}
+
+    .separator-overlay {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        background-color: rgba(0,0,0,.7);
+        z-index: 1;
+    }
+
+    .separator-quote-container {
+        color: #fff;
+        position: absolute;
+        z-index: 2;
+        width: 100%;
+        height: 100%;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
+        -webkit-box-pack: center;
+            -ms-flex-pack: center;
+                justify-content: center;
+    }
+
+        .quote {
+            width: 60%;
+            position: relative;
+        }
+
+        .quote-icon {
+            position: absolute;
+            width: 120px;
+        }
+
+            .quote-left {
+                top: -70px;
+                left: -20px;
+            }
+
+            .quote-right {
+                bottom: 20px;
+                right: 0;
+                -webkit-transform: rotate(180deg);
+                        transform: rotate(180deg);
+            }
+
+            .quote-icon img {
+                width: 100%;
+                opacity: .2;
+            }
+
+        .quote-text {
+            font-size: 48px;
+            margin-bottom: 50px;
+            line-height: 1.2em;
+        }
+
+        .quote-author {
+            font-size: 30px;
+            text-align: right;
+        }
+
+@media screen and (max-width: 1200px) {
+    .quote {
+        width: 80%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .quote {
+        width: 85%;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .quote-text {
+        font-size: 32px;
+    }
+
+    .quote-author {
+        font-size: 24px;
+    }
+}
+
+@media screen and (max-width: 425px) {
+    .quote-left {
+        left: 0;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    .quote-text {
+        font-size: 28px;
+    }
+
+    .quote-author {
+        font-size: 20px;
+    }
+}
