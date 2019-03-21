@@ -1,0 +1,135 @@
+.section-interactive {
+    background-color: #fff;
+}
+
+.interactive-container {
+    width: 100%;
+}
+
+    .interactive-item {
+        width: 100%;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: row;
+                flex-direction: row;
+        -webkit-box-align: start;
+            -ms-flex-align: start;
+                align-items: flex-start;
+        -ms-flex-pack: distribute;
+            justify-content: space-around;
+    }
+
+        .interactive-image img {
+            width: 600px;
+        }
+
+        .interactive-item-first {
+            margin-bottom: 80px;
+        }
+
+        .interactive-right {
+            margin-left: 100px;
+            padding-right: 20px;
+            -webkit-box-sizing: border-box;
+                    box-sizing: border-box;
+        }
+
+        .interactive-left {
+            margin-right: 100px;
+            padding-left: 20px;
+            -webkit-box-sizing: border-box;
+                    box-sizing: border-box;
+        }
+
+        .interactive-title h3 {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            color: #46415f;
+        }
+
+        .interactive-text p {
+            font-size: 18px;
+            line-height: 1.8em;
+            color: #343148;
+            margin-bottom: 20px;
+        }
+
+        .interactive-button button {
+            font-size: 18px;
+            background-color: #79b515;
+            border-radius: 5px;
+            padding: 10px 20px;
+            color: #fff;
+            cursor: pointer;
+            outline: none;
+            border: none;
+            width: 50%;
+        }
+
+        .interactive-button button:hover {
+            background-color: #46415f;
+        }
+
+@media screen and (max-width: 1024px) {
+    .interactive-image img {
+        width: 450px;
+    }
+
+    .interactive-button button {
+        width: 80%;
+    }
+}
+
+@media screen and (max-width: 1023px) {
+    .interactive-item {
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column;
+        -webkit-box-pack: center;
+            -ms-flex-pack: center;
+                justify-content: center;
+        text-align: center;
+    }
+
+    .interactive-item-first {
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: reverse;
+            -ms-flex-direction: column-reverse;
+                flex-direction: column-reverse;
+        margin-bottom: 60px;
+    }
+
+        .interactive-button button {
+            width: 50%;
+            margin: 0 auto;
+        }
+
+        .interactive-image img {
+            width: 100%;
+        }
+
+        .interactive-right {
+            margin-left: 0;
+            padding-right: 0;
+        }
+
+        .interactive-left {
+            margin-right: 0;
+            padding-left: 0;
+        }
+
+        .interactive-description {
+            margin-bottom: 30px;
+        }
+}
+
+@media screen and (max-width: 767px) {
+    .interactive-button button {
+        width: 80%;
+    }
+}
