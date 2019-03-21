@@ -49,10 +49,10 @@
                 <!-- Navigation -->
                 <nav>
                     <ul class="navigation-list">
-                        <li><a href="#formats">Форматы</a> </li>
+                        <li><a onclick="navigationScroll('formats')">Форматы</a> </li>
                         <li><a href="#">Меню</a> </li>
                         <li><a href="#">О нас</a> </li>
-                        <li><a href="#contacts">Контакты</a> </li>
+                        <li><a onclick="navigationScroll('contacts')">Контакты</a> </li>
                     </ul>
                 </nav>
                 <!-- Call Request button -->
@@ -94,16 +94,37 @@
                         <a href="tel:+77019955604">Позвонить</a>
                     </div>
                 </div>
+                <div class="call-modal-contacts">
+                    <ul>
+                        <li><span>Адрес:</span> </li>
+                        <li><p>г. Новосибирск, Карла Маркса 111</p> </li>
+                        <li><span>Телефон:</span> </li>
+                        <li><a href="#" style="text-decoration: underline;">+7 (123) 456-78-90</a> </li>
+                        <li><span>E-mail:</span> </li>
+                        <li><a href="#" style="text-decoration: underline;">email@victoria-catering.ru</a> </li>
+                    </ul>
+                </div>
             </div>
             <!-- Menu Aside -->
             <div class="menu-modal transition">
                 <div class="menu-modal-container">
                     <ul class="aside-menu-navigation">
-                        <li><a href="#">Форматы</a> </li>
+                        <li><a onclick="menuScroll('formats')">Форматы</a> </li>
                         <li><a href="#">Меню</a> </li>
                         <li><a href="#">О нас</a> </li>
-                        <li><a href="#">Контакты</a> </li>
+                        <li><a onclick="menuScroll('contacts')" >Контакты</a> </li>
                     </ul>
+                    <div class="menu-social-title">
+                        <p>Мы в социальных сетях</p>
+                    </div>
+                    <div class="menu-social-links">
+                        <div class="social-item">
+                            <a href="https://vk.com/victoriacatering" target="_blank"><img src="assets/img/icons/vk.svg"></a>
+                        </div>
+                        <div class="social-item">
+                            <a href="https://www.instagram.com/cateringvictoria/" target="_blank"><img src="assets/img/icons/instagram.svg"></a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </header>
@@ -376,10 +397,10 @@
             <div class="footer-container">
                 <div class="footer-column">
                     <ul>
-                        <li><a href="#">Форматы</a> </li>
+                        <li><a onclick="navigationScroll('formats')">Форматы</a> </li>
                         <li><a href="#">Меню</a> </li>
                         <li><a href="#">О нас</a> </li>
-                        <li><a href="#">Контакты</a> </li>
+                        <li><a onclick="navigationScroll('contacts')">Контакты</a> </li>
                         <li><a href="#">Вакансии</a> </li>
                     </ul>
                 </div>
@@ -417,5 +438,6 @@
         <!-- JS -->
         <script src="assets/js/callModal.js"></script>
         <script src="assets/js/menuModal.js"></script>
+        <script src="assets/js/scroll.js"></script>
     </body>
 </html>

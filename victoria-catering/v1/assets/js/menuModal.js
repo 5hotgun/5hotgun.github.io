@@ -5,3 +5,10 @@ const showMenuModal = () => {
     $('.menu-modal').css('left', `${menuModalPosition}%`);
     menuModalClosed = !menuModalClosed;
 };
+const menuScroll = (param) => {
+    $('.menu-modal').css('left', `-100%`);
+    $('html, body').animate({
+        scrollTop: $(`#${param}`).offset().top - 60
+    }, 800);
+    menuModalClosed = !menuModalClosed;
+};
