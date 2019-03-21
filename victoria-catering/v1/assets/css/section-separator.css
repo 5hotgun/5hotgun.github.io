@@ -95,6 +95,10 @@
 }
 
 @media screen and (max-width: 425px) {
+    .separator {
+        background-attachment: local;
+    }
+
     .quote-left {
         left: 0;
     }

@@ -36,6 +36,10 @@
         }
 
 @media screen and (max-width: 425px) {
+    .parallax {
+        background-attachment: local;
+    }
+
     .parallax-text {
         width: 85%;
     }
