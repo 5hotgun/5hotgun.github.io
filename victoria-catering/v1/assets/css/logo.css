@@ -1,100 +1,33 @@
-.logo-container {
-    width: auto;
+.logo-wide {
+    width: 270px;
     height: 50px;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    cursor: pointer;
 }
 
-    .logo-image, .logo-image img {
-        width: 50px;
-        height: 50px;
-    }
-
-    .logo-title {
-        text-align: center;
-        color: #fff;
-        margin-left: 10px;
-        padding-top: 6px;
-        line-height: 1.4em;
-    }
-
-        .logo-main {
-            font-size: 20px;
-            font-family: "Trajan";
-        }
-
-        .logo-sub {
-            font-size: 12px;
-            text-transform: uppercase;
-            font-family: "Helvetica";
-            letter-spacing: 5px;
-        }
-
-    .logo-background {
-        width: 50px;
-        height: 50px;
-        position: absolute;
-        top: 5px;
-        left: calc(50% - 25px);
-        opacity: .3;
-        display: none;
-    }
+.logo-small {
+    width: 190px;
+    height: 40px;
+    display: none;
+}
 
 @media screen and (max-width: 1024px) {
     .logo-container {
-        height: 40px;
         margin: 0 auto;
-        padding-right: 25px;
+        padding-right: 40px;
         -webkit-box-sizing: border-box;
                 box-sizing: border-box;
     }
-
-        .logo-image, .logo-image img {
-            width: 40px;
-            height: 40px;
-        }
-
-        .logo-title {
-            margin-left: 5px;
-        }
-
-        .logo-main {
-            font-size: 18px;
-        }
-
-        .logo-sub {
-            font-size: 10px;
-        }
 }
 
-    @media screen and (max-width: 425px) {
-        .logo-image {
-            display: none;
-        }
-
-        .logo-title {
-            line-height: 1em;
-        }
-
-        .logo-background {
-            display: block;
-        }
+@media screen and (max-width: 425px) {
+    .logo-container {
+        height: 40px;
     }
 
-    @media screen and (max-width: 320px) {
-        .logo-title {
-            /* display: none; */
-        }
+    .logo-wide {
+        display: none;
     }
+
+    .logo-small {
+        display: block;
+    }
+}
