@@ -8,11 +8,13 @@ Green:                  #79b515;
 
 
 body {
-    /* min-height: 10000px; */
-    background-color: #fff;
-    font-family: "Roboto";
+    width: 100%;
+    height: 100%;
     margin: 0;
     padding: 0;
+    background-color: #fff;
+    font-family: "Roboto";
+    overflow-x: hidden;
 }
 
 .transition {
