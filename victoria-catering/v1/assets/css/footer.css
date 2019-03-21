@@ -88,11 +88,19 @@ footer {
         }
 
     .footer-copyright {
+        width: 100%;
+        overflow: hidden;
+        box-sizing: border-box;
         text-align: center;
         color: #656565;
         font-size: 16px;
         padding: 30px 0;
     }
+
+        .footer-copyright p {
+            width: 300px;
+            margin: 0 auto;
+        }
 
 @media screen and (max-width: 1200px) {
     .footer-container {

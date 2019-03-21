@@ -7,6 +7,8 @@
     background-attachment: fixed;
     position: relative;
     overflow: hidden;
+    padding: 0;
+    margin: 0;
 }
 
     .parallax-text-container {

@@ -16,6 +16,8 @@
     background-repeat: no-repeat;
     background-size: cover;
     overflow: hidden;
+    padding: 0;
+    margin: 0;
 }
 
 .form-container {
