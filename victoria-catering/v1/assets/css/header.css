@@ -1,5 +1,5 @@
 header {
-    width: 100%;
+    width: calc(100% + 1px);
     height: 70px;
     position: fixed;
     top: 0;
