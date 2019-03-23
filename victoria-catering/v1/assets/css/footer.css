@@ -58,6 +58,10 @@ footer {
             color: #79b515;
         }
 
+        .underline {
+            text-decoration: underline!important;
+        }
+
     .social-links {
         display: -webkit-box;
         display: -ms-flexbox;
