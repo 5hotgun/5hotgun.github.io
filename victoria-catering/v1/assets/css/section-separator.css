@@ -65,6 +65,7 @@
             }
 
         .quote-text {
+
             font-size: 48px;
             margin-bottom: 50px;
             line-height: 1.2em;
@@ -73,6 +74,7 @@
         .quote-author {
             font-size: 30px;
             text-align: right;
+            font-weight: 300;
         }
 
 @media screen and (max-width: 1200px) {
