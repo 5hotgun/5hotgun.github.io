@@ -27,7 +27,7 @@
 
     .hero-text h1 {
         font-size: 40px;
-        font-weight: bold;
+        font-weight: 700;
         line-height: 1.2em;
         margin-bottom: 20px;
         color: #46415f;
@@ -73,6 +73,7 @@
 
     .hero-text h1 {
         font-size: 32px;
+        font-weight: 400;
     }
 
     .hero-text p {
