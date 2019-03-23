@@ -69,10 +69,9 @@
 }
 
     .call-title-main {
-        font-weight: bold;
+        font-weight: 500;
         font-size: 24px;
         color: #343148;
-        /* text-transform: uppercase; */
     }
 
     .call-title-sub {
@@ -82,7 +81,7 @@
     }
 
         .call-title-sub span {
-            font-weight: bold;
+            font-weight: 500;
         }
 
 /* Call Request Form */
@@ -169,7 +168,7 @@
     }
 
         .call-modal-contacts ul li span {
-            font-weight: bold;
+            font-weight: 500;
         }
 
         .call-modal-contacts ul li a {
