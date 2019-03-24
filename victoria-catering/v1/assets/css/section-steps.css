@@ -21,6 +21,7 @@
 
     .step-item {
         width: 320px;
+        min-height: 152px;
         margin-right: 20px;
         border: 1px solid rgba(0,0,0,.1);
         border-radius: 10px;

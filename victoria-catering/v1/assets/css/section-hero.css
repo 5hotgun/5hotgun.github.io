@@ -1,11 +1,23 @@
 .section-hero {
     width: 100%;
     height: 100vh;
-    background-image: url('../img/hero.jpg');
-    background-position: center bottom;
-    background-repeat: no-repeat;
-    background-size: cover;
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+0,f1f1f1+41,d1d1d1+100 */
+    background: #d1d1d1; /* Old browsers */
+    background: -moz-linear-gradient(45deg, #ffffff 0%, #f1f1f1 41%, #d1d1d1 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(45deg, #ffffff 0%,#f1f1f1 41%,#d1d1d1 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(45deg, #ffffff 0%,#f1f1f1 41%,#d1d1d1 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#d1d1d1',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+    position: relative;
 }
+
+    .hero-logo-container {
+        width: 50%;
+        position: absolute;
+        top: 70px;
+        right: -25%;
+        opacity: .3;
+        z-index: 1;
+    }
 
     .hero-text-container {
         width: 100%;
@@ -22,7 +34,12 @@
     }
 
     .hero-text {
-        max-width: 500px;
+        /* text-align: center; */
+        max-width: 100%;
+        margin: 0 auto;
+        text-align: center;
+        position: relative;
+        z-index: 2;
     }
 
     .hero-text h1 {
@@ -42,6 +59,7 @@
 
     .hero-text a {
         display: block;
+        /* margin: 0 auto; */
         width: 50%;
         text-align: center;
         text-decoration: none;
@@ -53,15 +71,45 @@
         background-color: #8EAF0C;
         border-radius: 5px;
         cursor: pointer;
+        margin: 0 auto;
     }
 
     .hero-text a:hover {
         background-color: #615c79;
     }
 
+@media screen and (max-width: 1366px) {
+    .hero-logo-container {
+        width: 70%;
+        right: -35%;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .hero-logo-container {
+        width: 100%;
+        top: 10vh;
+        right: -50%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .hero-logo-container {
+        width: 100%;
+        right: -50%;
+        top: 15%;
+    }
+}
+
 @media screen and (max-width: 425px) {
+    .hero-logo-container {
+        width: 120%;
+        right: -60%;
+        opacity: .1;
+    }
+
     .hero-text-container {
-        background-color: rgba(255,255,255,.3);
+        /* background-color: rgba(255,255,255,.3); */
         padding: 0 10px;
         -webkit-box-sizing: border-box;
                 box-sizing: border-box;
