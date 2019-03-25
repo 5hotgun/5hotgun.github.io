@@ -171,6 +171,10 @@
             font-weight: 500;
         }
 
+        .call-modal-contacts ul li p {
+            line-height: 1.4em;
+        }
+
         .call-modal-contacts ul li a {
             color: #343148;
         }

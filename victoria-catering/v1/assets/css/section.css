@@ -14,6 +14,10 @@ section {
     overflow: hidden;
 }
 
+.page-inner {
+    padding-top: 100px;
+}
+
 .section-title h2 {
     font-size: 42px;
     text-align: center;
@@ -39,10 +43,18 @@ section {
         font-size: 32px;
         padding: 70px 0;
     }
+
+    .page-inner {
+        padding-top: 70px;
+    }
 }
 
 @media screen and (max-width: 375px) {
     .section-title h2 {
         padding: 60px 0;
+    }
+
+    .page-inner {
+        padding-top: 60px;
     }
 }

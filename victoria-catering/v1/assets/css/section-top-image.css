@@ -1,0 +1,26 @@
+.section-top-image {
+    width: 100%;
+    height: 500px;
+    /* background-image: url('../img/page-formats.jpg'); */
+    background: -webkit-gradient( linear, left top, left bottom, from(rgba(0, 0, 0, 0.3)), to(rgba(0, 0, 0, 0.8)) ), url('../img/page-formats.jpg');
+    background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.8) ), url('../img/page-formats.jpg');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+}
+
+.section-top-image h1 {
+    color: #fff;
+    font-size: 50px;
+    margin-top: 20px;
+    /* font-weight: 300; */
+}
