@@ -79,9 +79,12 @@
         text-align: center;
     }
 
-        .format-order button {
+        .format-order a {
+            display: block;
+            width: 150px;
+            text-decoration: none;
             font-size: 18px;
-            background-color: #8EAF0C;
+            background-color: #DF8600;
             border-radius: 5px;
             padding: 10px 20px;
             color: #fff;
@@ -89,9 +92,10 @@
             outline: none;
             border: none;
             margin: 0 auto 20px;
+            transition: linear .2s;
         }
 
-        .format-order button:hover {
+        .format-order a:hover {
             background-color: #46415f;
         }
 
