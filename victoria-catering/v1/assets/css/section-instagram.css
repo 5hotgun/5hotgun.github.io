@@ -1,6 +1,6 @@
 .section-instagram {
-    background-image: -webkit-gradient(linear, left top, left bottom, from(#ffffff), color-stop(#f5f5f5), color-stop(#ebebeb), color-stop(#e2e2e2), to(#d8d8d8));
-    background-image: linear-gradient(to bottom, #ffffff, #f5f5f5, #ebebeb, #e2e2e2, #d8d8d8);
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#ffffff), color-stop(#f6f6f6), color-stop(#ededed), color-stop(#e5e5e5), to(#dcdcdc));
+    background-image: linear-gradient(to bottom, #ffffff, #f6f6f6, #ededed, #e5e5e5, #dcdcdc);
 }
 
 .instagram-wrapper {
