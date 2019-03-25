@@ -32,6 +32,10 @@ section {
         -webkit-box-sizing: border-box;
                 box-sizing: border-box;
     }
+
+    .page-inner {
+        padding-top: 100px;
+    }
 }
 
 @media screen and (max-width: 425px) {
