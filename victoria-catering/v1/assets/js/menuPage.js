@@ -1073,7 +1073,7 @@ const menu = [
             },
             // Добавки к мороженому
             {
-                groupTitle: 'Домашнее мороженое',
+                groupTitle: 'Добавки к мороженому',
                 groupItems: [
                     {
                         productName: 'Топинг манго / шоколад / карамель',
@@ -1294,7 +1294,7 @@ const menu = [
 $(document).ready(function() {
     const container = $('#menuContainer');
 
-    // Templating engine
+    // Templating
     for(let i = 0; i < menu.length; i++) {
         container.append(`<div class="menulist-item"><div class="menulist-title"><h3>${menu[i].menuList}</h3><img class="arrow-icon" src="assets/img/icons/arrow-down.svg" alt="Открыть" ></div><div class="menulist-content" id="menulist-${i}"></div></div>`);
         for(let k = 0; k < menu[i].menuGroups.length; k++) {
@@ -1311,6 +1311,7 @@ $(document).ready(function() {
     $('.menulist-title').on('click', function() {
         $(this).children('.arrow-icon').toggleClass('turned');
         $(this).next().slideToggle();
+        $('.close-menu').show();
     });
 
     $('.product-category').on('click', function() {
@@ -1320,6 +1321,16 @@ $(document).ready(function() {
         } else {
             $(this).children('p').attr('data-icon', '\u002B');
         }
+    });
 
+    $('.close-menu').on('click', function() {
+        $('.product-wrapper').hide();
+        $('.product-category').children('p').attr('data-icon', '\u002B');
+        $('.menulist-content').hide();
+        $('.arrow-icon').removeClass('turned');
+        $('html, body').animate({
+            scrollTop: $('.menu-container').offset().top - 100
+        }, 500);
+        $(this).hide();
     });
 });
