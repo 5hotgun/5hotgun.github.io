@@ -41,6 +41,10 @@
         <link rel="stylesheet" href="assets/css/section-top-image.css">
         <!-- Меню -->
         <link rel="stylesheet" href="assets/css/section-menu.css">
+        <!-- О нас -->
+        <link rel="stylesheet" href="assets/css/section-about.css">
+        <!-- Оставить заявку -->
+        <link rel="stylesheet" href="assets/css/section-request.css">
     </head>
     <body>
 
@@ -146,23 +150,79 @@
         <main>
 
             <!-- Обложка -->
-            <section class="section-top-image top-menu">
-                <h1>Кейтеринг меню</h1>
+            <section class="section-top-image top-request">
+                <h1>Оставить заявку</h1>
             </section>
 
             <!-- Меню -->
-            <section class="section-menu">
+            <section class="section-request">
                 <div class="section-inner page-inner">
-                    <div class="close-menu">
-                        <!-- <img src="assets/img/icons/arrow-down.svg" alt="Закрыть"> -->
-                        <svg viewBox="0 0 129 129" xmlns:xlink="http://www.w3.org/1999/xlink" enable-background="new 0 0 129 129">
-                          <g>
-                            <path fill="#fff" d="m121.3,34.6c-1.6-1.6-4.2-1.6-5.8,0l-51,51.1-51.1-51.1c-1.6-1.6-4.2-1.6-5.8,0-1.6,1.6-1.6,4.2 0,5.8l53.9,53.9c0.8,0.8 1.8,1.2 2.9,1.2 1,0 2.1-0.4 2.9-1.2l53.9-53.9c1.7-1.6 1.7-4.2 0.1-5.8z"/>
-                          </g>
-                        </svg>
-                    </div>
-                    <div class="menu-container" id="menuContainer">
+                    <div class="request-container">
+                        <form class="request-form" action="" method="post">
 
+                            <fieldset>
+                                <label for="format">Формат обслуживания</label>
+                                <select class="" name="format" id="format">
+                                    <option value="">Кофе-брейк</option>
+                                    <option value="">Фуршет</option>
+                                    <option value="">Банкет</option>
+                                </select>
+                            </fieldset>
+                            <fieldset>
+                                <label for="guests">Количество гостей</label>
+                                <input type="number" name="guests" id="guests" value="">
+                            </fieldset>
+                            <fieldset>
+                                <label for="date">Дата мероприятия</label>
+                                <input type="date" name="date" id="date" value="">
+                            </fieldset>
+                            <!-- <fieldset>
+                                <label for="timeFrom">Время с</label>
+                                <input type="time" name="timeFrom" id="timeFrom" value="">
+                            </fieldset>
+                            <fieldset>
+                                <label for="timeTo">Время до</label>
+                                <input type="time" name="timeTo" id="timeTo" value="">
+                            </fieldset> -->
+                            <!-- <fieldset>
+                                <label for="address">Адрес</label>
+                                <input type="text" name="address" id="address" value="">
+                            </fieldset> -->
+                            <!-- <fieldset>
+                                <label for="wishes">Пожелания к меню</label>
+                                <textarea name="wishes" id="wishes" rows="8"></textarea>
+                            </fieldset>
+                            <fieldset>
+                                <label for="">Напитки</label>
+                                <div class="select-trigger">
+                                    выбрать
+                                </div>
+                            </fieldset> -->
+                            <fieldset>
+                                <label for="budget">Бюджет: <span id="budgetValue"></span> т. руб.</label>
+                                <!-- <input type="text" name="budget" id="budget" value=""> -->
+                                <input type="range" name="budget" id="budget" min="7" max="100" step="1" value="30">
+                            </fieldset>
+                            <!-- <fieldset>
+                                <label for="experience">Прошлый опыт работы с кейтерингом</label>
+                                <textarea name="experience" id="experience" rows="8"></textarea>
+                            </fieldset> -->
+                            <fieldset>
+                                <label for="name">Имя</label>
+                                <input type="text" name="name" id="name" value="">
+                            </fieldset>
+                            <fieldset>
+                                <label for="phone">Телефон</label>
+                                <input type="text" name="phone" id="phone" value="">
+                            </fieldset>
+                            <fieldset>
+                                <label for="email">E-mail</label>
+                                <input type="email" name="email" id="email" value="">
+                            </fieldset>
+                            <fieldset>
+                                <button type="submit" name="button">Отправить</button>
+                            </fieldset>
+                        </form>
                     </div>
                 </div>
             </section>
@@ -247,6 +307,6 @@
         <script src="assets/js/callModal.js"></script>
         <script src="assets/js/menuModal.js"></script>
         <script src="assets/js/scrollToContacts.js"></script>
-        <script src="assets/js/menuPage.js"></script>
+        <script src="assets/js/budgetSlider.js"></script>
     </body>
 </html>

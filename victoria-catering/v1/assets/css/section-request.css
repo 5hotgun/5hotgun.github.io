@@ -1,0 +1,53 @@
+.section-request {
+    background-color: #f1f1f1;
+}
+
+.request-container {
+    width: 100%;
+}
+
+.request-form {
+    width: 400px;
+    padding: 20px;
+    box-sizing: border-box;
+    background-color: #fff;
+    margin: 0 auto;
+}
+
+.request-form fieldset {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.request-form label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.request-form input, .request-form select, .request-form textarea {
+    width: 100%;
+    background: none;
+    outline: none;
+    border: 1px solid rgba(0,0,0,.1);
+    padding: 10px;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+.request-form input {
+
+}
+
+.request-form select {
+
+}
+
+.request-form textarea {
+
+}
+
+@media screen and (max-width: 425px) {
+    .request-form {
+        width: 100%;
+    }
+}
