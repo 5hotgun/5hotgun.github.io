@@ -1307,16 +1307,28 @@ $(document).ready(function() {
         }
     }
 
-
-
     $('.menulist-title').on('click', function() {
-        $(this).children('.arrow-icon').toggleClass('turned');
+        // Скролл к элементу если он открывается
+        if($(this).attr('data-shown') === 'true') {
+            $(this).attr('data-shown', 'false');
+        } else {
+            $(this).attr('data-shown', 'true');
+            $('html, body').animate({
+                scrollTop: $(this).offset().top - 100
+            }, 500);
+        }
+        // Перевернуть стрелку
+        $(this).children('.arrow-icon').toggleClass('turned')
+        // Показать контент
         $(this).next().slideToggle();
+        // Показать фиксированую кнопку
         $('.close-menu').show();
     });
 
     $('.product-category').on('click', function() {
+        // Показать или скрыть список
         $(this).next().slideToggle();
+        // Изменить + на -
         if($(this).children('p').attr('data-icon') === '\u002B') {
             $(this).children('p').attr('data-icon', '\u002D');
         } else {
@@ -1325,6 +1337,7 @@ $(document).ready(function() {
     });
 
     $('.close-menu').on('click', function() {
+        // Закрыть все списки, скролл к первому списку
         $('.product-wrapper').hide();
         $('.product-category').children('p').attr('data-icon', '\u002B');
         $('.menulist-content').hide();
