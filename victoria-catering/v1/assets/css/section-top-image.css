@@ -17,6 +17,7 @@
 .top-formats {
     background: -webkit-gradient( linear, left top, left bottom, from(rgba(0, 0, 0, 0.5)), to(rgba(0, 0, 0, 0.8)) ), url('../img/page-formats.jpg');
     background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.8) ), url('../img/page-formats.jpg');
+    background-repeat: no-repeat;
 }
 
 .top-menu {
@@ -24,6 +25,15 @@
     background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.8) ), url('../img/page-menu.jpg');
     background-position: center center;
     background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.top-about {
+    background: -webkit-gradient( linear, left top, left bottom, from(rgba(0, 0, 0, 0.5)), to(rgba(0, 0, 0, 0.8)) ), url('../img/page-about.jpg');
+    background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.8) ), url('../img/page-about.jpg');
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 .section-top-image h1 {
