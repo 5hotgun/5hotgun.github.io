@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="ru" dir="ltr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="description" content="Victoria Catering - Форматы мероприятий: кофе-брейк, фуршет, банкет">
+        <meta name="keywords" content="банкет, фуршет, кофе-брейк, кейтеринг, корпоротивная вечеринка, ресторан выездного обслуживания, новосибирск">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <!-- Favicon -->
+        <link rel="icon" href="favicon.ico">
+        <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+        <link rel="manifest" href="site.webmanifest">
+        <link rel="mask-icon" href="safari-pinned-tab.svg" color="#46415f">
+        <meta name="msapplication-TileColor" content="#46415f">
+        <meta name="theme-color" content="#46415f">
+
+        <title>Кейтеринг меню - Victoria Catering</title>
+        <!-- Vendor CSS -->
+        <link rel="stylesheet" href="vendor/reset.min.css">
+        <!-- <link rel="stylesheet" href="vendor/fonts/fonts.css"> -->
+        <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
+        <!-- CSS -->
+        <link rel="stylesheet" href="assets/css/all.css">
+        <link rel="stylesheet" href="assets/css/header.css">
+        <link rel="stylesheet" href="assets/css/logo.css">
+        <link rel="stylesheet" href="assets/css/header-navigation.css">
+        <link rel="stylesheet" href="assets/css/call-modal.css">
+        <link rel="stylesheet" href="assets/css/menu-modal.css">
+        <link rel="stylesheet" href="assets/css/section.css">
+        <link rel="stylesheet" href="assets/css/section-hero.css">
+        <link rel="stylesheet" href="assets/css/section-formats.css">
+        <link rel="stylesheet" href="assets/css/section-separator.css">
+        <link rel="stylesheet" href="assets/css/section-interactive.css">
+        <link rel="stylesheet" href="assets/css/section-parallax.css">
+        <link rel="stylesheet" href="assets/css/section-steps.css">
+        <link rel="stylesheet" href="assets/css/footer.css">
+        <link rel="stylesheet" href="assets/css/section-breadcrumbs.css">
+        <!-- Форматы -->
+        <link rel="stylesheet" href="assets/css/section-top-image.css">
+        <!-- Меню -->
+        <link rel="stylesheet" href="assets/css/section-menu.css">
+    </head>
+    <body>
+
+        <header>
+            <div class="header-inner">
+                <!-- Menu button -->
+                <div class="menu-button" onclick="showMenuModal();">
+                    <img src="assets/img/icons/menu.svg" alt="Menu">
+                </div>
+                <!-- Logo -->
+                <div class="logo-container">
+                    <div class="logo-wide">
+                        <a href="index.html"><img src="assets/img/logo.svg" alt="Victoria Catering"></a>
+                    </div>
+                    <div class="logo-small">
+                        <a href="index.html"><img src="assets/img/logo-center.svg" alt="Victoria Catering"></a>
+                    </div>
+                </div>
+                <!-- Navigation -->
+                <nav>
+                    <ul class="navigation-list">
+                        <li><a href="formats.html">Форматы</a> </li>
+                        <li><a href="menu.html">Меню</a> </li>
+                        <li><a href="about.html">О нас</a> </li>
+                        <li><a href="contacts.html">Контакты</a> </li>
+                    </ul>
+                </nav>
+                <!-- Call Request button -->
+                <div class="call-button" onclick="showCallModal();">
+                    <div class="call-button-inner transition">
+                        <div class="call-button-state">
+                            <img src="assets/img/icons/phone.svg" alt="Phone">
+                        </div>
+                        <div class="call-button-state">
+                            <img src="assets/img/icons/close.svg" alt="Close">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Call request modal -->
+            <div class="call-modal transition">
+                <div class="call-modal-title">
+                    <p class="call-title-main">Заказать звонок</p>
+                    <p class="call-title-sub">Перезвоним через <span>27</span> секунд</p>
+                </div>
+                <div class="call-modal-form">
+                    <form action="form.php">
+                        <fieldset>
+                            <input type="text" name="" value="" placeholder="Имя">
+                        </fieldset>
+                        <fieldset>
+                            <input type="text" name="" value="" placeholder="Телефон">
+                        </fieldset>
+                        <fieldset>
+                            <button type="submit" name="button">Оставить заявку</button>
+                        </fieldset>
+                    </form>
+                </div>
+                <div class="call-modal-bottom">
+                    <div class="call-modal-title">
+                        <p class="call-title-main">Или</p>
+                    </div>
+                    <div class="call-link">
+                        <a href="tel:+79133761188">Позвонить</a>
+                    </div>
+                </div>
+                <div class="call-modal-contacts">
+                    <ul>
+                        <li><span>Адрес:</span> </li>
+                        <li><p>г. Новосибирск, ул. Станционная, 60/9</p> </li>
+                        <li><span>Телефон:</span> </li>
+                        <li><a href="tel:+79133761188" class="underline">+7 (913) 376-11-88</a> </li>
+                        <li><span>E-mail:</span> </li>
+                        <li><a href="mailto:pedangroup@gmail.com" class="underline">pedangroup@gmail.com</a> </li>
+                    </ul>
+                </div>
+            </div>
+            <!-- Menu Aside -->
+            <div class="menu-modal transition">
+                <div class="menu-modal-container">
+                    <ul class="aside-menu-navigation">
+                        <li><a href="index.html">Главная</a> </li>
+                        <li><a href="formats.html">Форматы</a> </li>
+                        <li><a href="menu.html">Меню</a> </li>
+                        <li><a href="about.html">О нас</a> </li>
+                        <li><a href="contacts.html">Контакты</a> </li>
+                    </ul>
+                    <div class="menu-social-title">
+                        <p>Мы в социальных сетях</p>
+                    </div>
+                    <div class="menu-social-links">
+                        <div class="social-item">
+                            <a href="https://vk.com/victoriacatering" target="_blank"><img src="assets/img/icons/vk.svg" alt="Vk"></a>
+                        </div>
+                        <div class="social-item">
+                            <a href="https://www.instagram.com/cateringvictoria/" target="_blank"><img src="assets/img/icons/instagram.svg" alt="Instagram"></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <main>
+
+            <!-- Обложка -->
+            <section class="section-top-image top-menu">
+                <h1>Кейтеринг меню</h1>
+            </section>
+
+            <!-- Меню -->
+            <section class="section-menu">
+                <div class="section-inner page-inner">
+                    <div class="menu-container" id="menuContainer">
+
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <footer>
+            <div class="footer-container">
+                <div class="footer-column">
+                    <div class="column-title">
+                        <p>Навигация</p>
+                    </div>
+                    <div class="column-content">
+                        <ul class="footer-navigation">
+                            <li> <a href="index.html">Главная</a> </li>
+                            <li> <a href="formats.html">Форматы</a> </li>
+                            <li> <a href="menu.html">Меню</a> </li>
+                            <li> <a href="about.html">О нас</a> </li>
+                            <li> <a href="vacancy.html">Вакансии</a> </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="footer-column contacts-column">
+                    <div class="column-title">
+                        <p>Контакты</p>
+                    </div>
+                    <div class="column-content">
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <img src="assets/img/icons/address.svg" alt="Адрес:">
+                            </div>
+                            <div class="contact-description">
+                                <p>г. Новосибирск, ул. Станционная, 60/9</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <img src="assets/img/icons/phone-footer.svg" alt="Телефон:">
+                            </div>
+                            <div class="contact-description">
+                                <a href="tel:+79133761188">+7 (913) 376-11-88</a>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <img src="assets/img/icons/email.svg" alt="E-mail:">
+                            </div>
+                            <div class="contact-description">
+                                <a href="mailto:pedangroup@gmail.com">pedangroup@gmail.com</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <div class="column-title">
+                        <p>Мы в социальных сетях</p>
+                    </div>
+                    <div class="column-content">
+                        <div class="social-links">
+                            <div class="social-item">
+                                <a href="https://vk.com/victoriacatering" target="_blank"><img src="assets/img/icons/vk.svg" alt="Вконтакте"></a>
+                            </div>
+                            <div class="social-item">
+                                <a href="https://www.instagram.com/cateringvictoria/" target="_blank"><img src="assets/img/icons/instagram.svg" alt="Instagram"></a>
+                            </div>
+                        </div>
+                        <div class="dev-link">
+                            <p>Разработка сайта</p>
+                            <a href="#">Dewoid Websites</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-copyright">
+                <p>&#169; Pedan Group, 2019 </p>
+            </div>
+        </footer>
+
+        <!-- Vendor -->
+        <script src="vendor/jquery-3.3.1.min.js"></script>
+        <!-- JS -->
+        <script src="assets/js/callModal.js"></script>
+        <script src="assets/js/menuModal.js"></script>
+        <script src="assets/js/menuPage.js"></script>
+    </body>
+</html>
