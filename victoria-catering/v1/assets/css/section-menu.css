@@ -1,5 +1,6 @@
 .section-menu {
-    background-color: #f1f1f1;
+    background-color: #fff;
+
 }
 
 .menu-container {
@@ -180,9 +181,10 @@
             box-sizing: border-box;
     border: 1px solid rgba(0,0,0,.1);
     border-radius: 50%;
-    background-color: #46415f;
+    background-color: #DF8600;
     cursor: pointer;
     display: none;
+    z-index: 10;
 }
 
     .close-menu svg {

@@ -1,9 +1,10 @@
 .section-request {
-    background-color: #f1f1f1;
+    background-color: #fff;
 }
 
 .request-container {
     width: 100%;
+    padding-bottom: 60px;
 }
 
 .request-form {
