@@ -158,10 +158,12 @@
 
             <!-- Меню -->
             <section class="section-request">
-                <div class="section-inner page-inner">
+                <div class="section-inner page-inner request-page-inner">
                     <div class="request-container">
+                        <div class="form-text">
+                            <img src="assets/img/logo-form.svg" alt="Victoria Catering" title="Victoria Catering">
+                        </div>
                         <form class="request-form" action="" method="post">
-
                             <fieldset>
                                 <label for="format">Формат обслуживания</label>
                                 <select class="" name="format" id="format" required>
@@ -178,37 +180,10 @@
                                 <label for="date">Дата мероприятия</label>
                                 <input type="date" name="date" id="date" value="" required>
                             </fieldset>
-                            <!-- <fieldset>
-                                <label for="timeFrom">Время с</label>
-                                <input type="time" name="timeFrom" id="timeFrom" value="">
-                            </fieldset>
-                            <fieldset>
-                                <label for="timeTo">Время до</label>
-                                <input type="time" name="timeTo" id="timeTo" value="">
-                            </fieldset> -->
-                            <!-- <fieldset>
-                                <label for="address">Адрес</label>
-                                <input type="text" name="address" id="address" value="">
-                            </fieldset> -->
-                            <!-- <fieldset>
-                                <label for="wishes">Пожелания к меню</label>
-                                <textarea name="wishes" id="wishes" rows="8"></textarea>
-                            </fieldset>
-                            <fieldset>
-                                <label for="">Напитки</label>
-                                <div class="select-trigger">
-                                    выбрать
-                                </div>
-                            </fieldset> -->
                             <fieldset>
                                 <label for="budget">Бюджет: <span id="budgetValue"></span> т. руб.</label>
-                                <!-- <input type="text" name="budget" id="budget" value=""> -->
                                 <input type="range" name="budget" id="budget" min="10" max="100" step="5" value="30" required>
                             </fieldset>
-                            <!-- <fieldset>
-                                <label for="experience">Прошлый опыт работы с кейтерингом</label>
-                                <textarea name="experience" id="experience" rows="8"></textarea>
-                            </fieldset> -->
                             <fieldset>
                                 <label for="name">Имя</label>
                                 <input type="text" name="name" id="name" value="" required>
