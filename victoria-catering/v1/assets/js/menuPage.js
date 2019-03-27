@@ -1293,13 +1293,14 @@ const menu = [
 
 $(document).ready(function() {
     const container = $('#menuContainer');
-
+    const menuLength = menu.length;
     // Templating
-    for(let i = 0; i < menu.length; i++) {
+    for(let i = 0; i < menuLength; i++) {
         container.append(`<div class="menulist-item"><div class="menulist-title"><h3>${menu[i].menuList}</h3><img class="arrow-icon" src="assets/img/icons/arrow-down.svg" alt="Открыть" ></div><div class="menulist-content" id="menulist-${i}"></div></div>`);
-        for(let k = 0; k < menu[i].menuGroups.length; k++) {
+        let menuGroupsLength = menu[i].menuGroups.length;
+        for(let k = 0; k < menuGroupsLength; k++) {
             $(`#menulist-${i}`).append(`<div class="product-group"><div class="product-category"><p data-icon="&#43;">${menu[i].menuGroups[k].groupTitle}</p></div><div class="product-wrapper" id="wrapper-${i}-${k}"></div></div>`);
-            const groupItemsLength = menu[i].menuGroups[k].groupItems.length;
+            let groupItemsLength = menu[i].menuGroups[k].groupItems.length;
             for(let z = 0; z < groupItemsLength; z++) {
                 $(`#wrapper-${i}-${k}`).append(`<div class="product-item"><div class="product-header"><p class="product-title">${menu[i].menuGroups[k].groupItems[z].productName}</p><p class="product-description">${menu[i].menuGroups[k].groupItems[z].productDesc}</p></div><div class="product-chars"><p class="product-weight">${menu[i].menuGroups[k].groupItems[z].productWeight}</p><p class="product-price">${menu[i].menuGroups[k].groupItems[z].productPrice}</p></div></div>`);
             }
