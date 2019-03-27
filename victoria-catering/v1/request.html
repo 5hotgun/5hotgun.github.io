@@ -70,6 +70,7 @@
                         <li><a href="menu.html">Меню</a> </li>
                         <li><a href="about.html">О нас</a> </li>
                         <li><a onclick="scrollToContacts();">Контакты</a> </li>
+                        <li><a href="request.html">Заказать</a> </li>
                     </ul>
                 </nav>
                 <!-- Call Request button -->
@@ -131,7 +132,7 @@
                         <li><a href="menu.html">Меню</a> </li>
                         <li><a href="about.html">О нас</a> </li>
                         <li><a onclick="scrollToContacts();">Контакты</a> </li>
-                        <li><a href="request.html">Оставить заявку</a> </li>
+                        <li> <a href="request.html">Заказать</a> </li>
                     </ul>
                     <div class="menu-social-title">
                         <p>Мы в социальных сетях</p>
@@ -163,7 +164,7 @@
 
                             <fieldset>
                                 <label for="format">Формат обслуживания</label>
-                                <select class="" name="format" id="format">
+                                <select class="" name="format" id="format" required>
                                     <option value="">Кофе-брейк</option>
                                     <option value="">Фуршет</option>
                                     <option value="">Банкет</option>
@@ -171,11 +172,11 @@
                             </fieldset>
                             <fieldset>
                                 <label for="guests">Количество гостей</label>
-                                <input type="number" name="guests" id="guests" value="">
+                                <input type="number" name="guests" id="guests" value="" required>
                             </fieldset>
                             <fieldset>
                                 <label for="date">Дата мероприятия</label>
-                                <input type="date" name="date" id="date" value="">
+                                <input type="date" name="date" id="date" value="" required>
                             </fieldset>
                             <!-- <fieldset>
                                 <label for="timeFrom">Время с</label>
@@ -202,7 +203,7 @@
                             <fieldset>
                                 <label for="budget">Бюджет: <span id="budgetValue"></span> т. руб.</label>
                                 <!-- <input type="text" name="budget" id="budget" value=""> -->
-                                <input type="range" name="budget" id="budget" min="10" max="100" step="5" value="30">
+                                <input type="range" name="budget" id="budget" min="10" max="100" step="5" value="30" required>
                             </fieldset>
                             <!-- <fieldset>
                                 <label for="experience">Прошлый опыт работы с кейтерингом</label>
@@ -210,15 +211,15 @@
                             </fieldset> -->
                             <fieldset>
                                 <label for="name">Имя</label>
-                                <input type="text" name="name" id="name" value="">
+                                <input type="text" name="name" id="name" value="" required>
                             </fieldset>
                             <fieldset>
                                 <label for="phone">Телефон</label>
-                                <input type="text" name="phone" id="phone" value="">
+                                <input type="text" name="phone" id="phone" value="" required>
                             </fieldset>
                             <fieldset>
                                 <label for="email">E-mail</label>
-                                <input type="email" name="email" id="email" value="">
+                                <input type="email" name="email" id="email" value="" required>
                             </fieldset>
                             <fieldset>
                                 <button type="submit" name="button">Отправить</button>
@@ -242,7 +243,7 @@
                             <li> <a href="formats.html">Форматы</a> </li>
                             <li> <a href="menu.html">Меню</a> </li>
                             <li> <a href="about.html">О нас</a> </li>
-                            <li> <a href="request.html">Оставить заявку</a> </li>
+                            <li> <a href="request.html">Заказать</a> </li>
                         </ul>
                     </div>
                 </div>
