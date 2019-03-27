@@ -39,7 +39,7 @@
 .top-request {
     background: -webkit-gradient( linear, left top, left bottom, from(rgba(0, 0, 0, 0.5)), to(rgba(0, 0, 0, 0.8)) ), url('../img/page-request.jpg');
     background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.8) ), url('../img/page-request.jpg');
-    background-position: center center;
+    background-position: 10% center;
     background-size: cover;
     background-repeat: no-repeat;
 }
@@ -54,6 +54,6 @@
 
 @media screen and (max-width: 425px) {
     .section-top-image h1 {
-        font-size: 40px;
+        font-size: 35px;
     }
 }
