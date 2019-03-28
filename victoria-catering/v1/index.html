@@ -62,13 +62,13 @@
                         <li><a href="formats.html">Форматы</a> </li>
                         <li><a href="menu.html">Меню</a> </li>
                         <li><a href="about.html">О нас</a> </li>
-                        <li><a onclick="scrollToContacts();">Контакты</a> </li>
+                        <li><a onclick="scrollWin('contacts');">Контакты</a> </li>
                         <li><a href="request.html">Заказать</a> </li>
                     </ul>
                 </nav>
                 <!-- Call Request button -->
-                <div class="call-button" onclick="showCallModal();">
-                    <div class="call-button-inner transition">
+                <div class="call-button" onclick="showCallModal('Заказать звонок');">
+                    <div class="call-button-inner transition" id="callButtonInner">
                         <div class="call-button-state">
                             <img src="assets/img/icons/phone.svg" alt="Phone">
                         </div>
@@ -79,18 +79,18 @@
                 </div>
             </div>
             <!-- Call request modal -->
-            <div class="call-modal transition">
+            <div class="call-modal transition" id="callModal">
                 <div class="call-modal-title">
-                    <p class="call-title-main">Заказать звонок</p>
+                    <p class="call-title-main" id="callModalTitle">Заказать звонок</p>
                     <p class="call-title-sub">Перезвоним через <span>27</span> секунд</p>
                 </div>
                 <div class="call-modal-form">
                     <form action="form.php">
                         <fieldset>
-                            <input type="text" name="" value="" placeholder="Имя">
+                            <input type="text" name="" value="" placeholder="Имя" required>
                         </fieldset>
                         <fieldset>
-                            <input type="text" name="" value="" placeholder="Телефон">
+                            <input type="text" name="" value="" placeholder="Телефон" required>
                         </fieldset>
                         <fieldset>
                             <button type="submit" name="button">Оставить заявку</button>
@@ -107,24 +107,42 @@
                 </div>
                 <div class="call-modal-contacts">
                     <ul>
-                        <li><span>Адрес:</span> </li>
-                        <li><p>г. Новосибирск, ул. Станционная, 60/9</p> </li>
-                        <li><span>Телефон:</span> </li>
-                        <li><a href="tel:+79133761188" class="underline">+7 (913) 376-11-88</a> </li>
-                        <li><span>E-mail:</span> </li>
-                        <li><a href="mailto:pedangroup@gmail.com" class="underline">pedangroup@gmail.com</a> </li>
+                        <li>
+                            <div class="contact-icon">
+                                <img src="assets/img/icons/address-dark.svg" alt="Адрес:">
+                            </div>
+                            <div class="contact-description modal-dark">
+                                <p>г. Новосибирск, ул. Станционная, 60/9</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="contact-icon">
+                                <img src="assets/img/icons/phone.svg" alt="Телефон:">
+                            </div>
+                            <div class="contact-description">
+                                <a href="tel:+79133761188">+7 (913) 376-11-88</a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="contact-icon">
+                                <img src="assets/img/icons/email-dark.svg" alt="E-mail:">
+                            </div>
+                            <div class="contact-description">
+                                <a href="mailto:pedangroup@gmail.com">pedangroup@gmail.com</a>
+                            </div>
+                        </li>
                     </ul>
                 </div>
             </div>
             <!-- Menu Aside -->
-            <div class="menu-modal transition">
+            <div class="menu-modal transition" id="menuModal">
                 <div class="menu-modal-container">
                     <ul class="aside-menu-navigation">
                         <li><a href="index.html">Главная</a> </li>
                         <li><a href="formats.html">Форматы</a> </li>
                         <li><a href="menu.html">Меню</a> </li>
                         <li><a href="about.html">О нас</a> </li>
-                        <li><a onclick="scrollToContacts();">Контакты</a> </li>
+                        <li><a onclick="scrollWin('contacts');">Контакты</a> </li>
                         <li> <a href="request.html">Заказать</a> </li>
                     </ul>
                     <div class="menu-social-title">
@@ -228,7 +246,6 @@
                                 <p>Горячие и холодные закуски</p>
                             </div>
                             <div class="format-order">
-                                <!-- <button class="transition" onclick="showCallModal();">Оставить заявку</button> -->
                                 <a href="request.html">Оставить заявку</a>
                             </div>
                             <div class="format-menu">
@@ -358,7 +375,7 @@
                                 <p>Оставьте заявку или свяжитесь с нами</p>
                             </div>
                             <div class="step-action">
-                                <a onclick="showCallModal();">Позвонить</a>
+                                <a onclick="showCallModal('Заказать звонок');">Позвонить</a>
                             </div>
                         </div>
                         <div class="step-item transition">
@@ -374,7 +391,7 @@
                                 <p>Дегустация с 20% скидкой</p>
                             </div>
                             <div class="step-action">
-                                <a href="#">Записаться</a>
+                                <a onclick="showCallModal('Записаться на дегустацию');">Записаться</a>
                             </div>
                         </div>
                         <div class="step-item transition">
@@ -496,7 +513,7 @@
         <!-- JS -->
         <script src="assets/js/callModal.js"></script>
         <script src="assets/js/menuModal.js"></script>
-        <script src="assets/js/scrollToContacts.js"></script>
+        <script src="assets/js/scroll.js"></script>
         <script src="assets/js/instafeed.js"></script>
     </body>
 </html>

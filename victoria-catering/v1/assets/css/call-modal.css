@@ -95,42 +95,41 @@
         margin: 15px 0;
     }
 
-    .call-modal-form select {
-        width: 100%;
-        padding: 10px 5px;
-        -webkit-box-sizing: border-box;
-                box-sizing: border-box;
-        border: 1px solid #ddd;
-        border-radius: 5px;
-        outline: none;
-        background-color: none;
-        font-size: 18px;
-    }
-
     .call-modal-form input {
         width: 100%;
-        padding: 10px 5px;
-        -webkit-box-sizing: border-box;
-                box-sizing: border-box;
-        border: 1px solid #ddd;
-        border-radius: 5px;
+        background: none;
         outline: none;
-        background-color: none;
-        font-size: 18px;
+        border: 1px solid rgba(0,0,0,.2);
+        border-radius: 5px;
+        padding: 10px;
+        box-sizing: border-box;
+        font-size: 16px;
+        color: #343148;
+        transition: linear .2s;
+    }
+
+    .call-modal-form input:focus {
+        border-color: #ffd390;
     }
 
     .call-modal-form button {
         width: 100%;
-        padding: 10px 5px;
+        padding: 10px 50px;
+        margin: 0 auto;
         -webkit-box-sizing: border-box;
                 box-sizing: border-box;
         border: 1px solid #ddd;
         border-radius: 5px;
         outline: none;
         cursor: pointer;
-        background-color: #46415f;
+        background-color: #DF8600;
         color: #fff;
         font-size: 18px;
+        transition: linear .2s;
+    }
+
+    .call-modal-form button:hover {
+        background-color: #46415f;
     }
 
     .call-modal-bottom {
@@ -138,25 +137,24 @@
         margin-bottom: 20px;
     }
 
-    .call-link {
+    .call-link a {
+        display: block;
+        text-align: center;
+        text-decoration: none;
         width: 100%;
-        margin-top: 30px;
-        background-color: #46415f;
-        border-radius: 5px;
-        padding: 10px 5px;
+        padding: 10px 50px;
+        margin: 0 auto;
         -webkit-box-sizing: border-box;
                 box-sizing: border-box;
-        text-align: center;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        outline: none;
+        cursor: pointer;
+        background-color: #DF8600;
+        color: #fff;
+        font-size: 18px;
+        transition: linear .2s;
     }
-
-        .call-link a {
-            display: block;
-            width: 100%;
-            height: 100%;
-            color: #fff;
-            text-decoration: none;
-            font-size: 18px;
-        }
 
     .call-modal-contacts {
         margin-top: 40px;
@@ -164,20 +162,19 @@
 
     .call-modal-contacts ul li {
         margin-bottom: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+    }
+
+    .call-modal-contacts ul li p {
         color: #343148;
     }
 
-        .call-modal-contacts ul li span {
-            font-weight: 500;
-        }
-
-        .call-modal-contacts ul li p {
-            line-height: 1.4em;
-        }
-
-        .call-modal-contacts ul li a {
-            color: #343148;
-        }
+    .call-modal-contacts ul li a {
+        color: #343148;
+        text-decoration: underline;
+    }
 
 @media screen and (max-width: 1200px) {
     .call-button {
@@ -229,15 +226,8 @@
         margin: 10px 0;
     }
 
-    .call-modal-form input {
+    .call-modal-form input, .call-modal-form button, .call-link a   {
         font-size: 16px;
     }
 
-    .call-modal-form button {
-        font-size: 16px;
-    }
-
-    .call-link a {
-        font-size: 16px;
-    }
 }

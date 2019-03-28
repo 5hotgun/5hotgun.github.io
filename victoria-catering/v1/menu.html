@@ -65,13 +65,13 @@
                         <li><a href="formats.html">Форматы</a> </li>
                         <li><a href="menu.html">Меню</a> </li>
                         <li><a href="about.html">О нас</a> </li>
-                        <li><a onclick="scrollToContacts();">Контакты</a> </li>
+                        <li><a onclick="scrollWin('contacts');">Контакты</a> </li>
                         <li><a href="request.html">Заказать</a> </li>
                     </ul>
                 </nav>
                 <!-- Call Request button -->
-                <div class="call-button" onclick="showCallModal();">
-                    <div class="call-button-inner transition">
+                <div class="call-button" onclick="showCallModal('Заказать звонок');">
+                    <div class="call-button-inner transition" id="callButtonInner">
                         <div class="call-button-state">
                             <img src="assets/img/icons/phone.svg" alt="Phone">
                         </div>
@@ -82,18 +82,18 @@
                 </div>
             </div>
             <!-- Call request modal -->
-            <div class="call-modal transition">
+            <div class="call-modal transition" id="callModal">
                 <div class="call-modal-title">
-                    <p class="call-title-main">Заказать звонок</p>
+                    <p class="call-title-main" id="callModalTitle">Заказать звонок</p>
                     <p class="call-title-sub">Перезвоним через <span>27</span> секунд</p>
                 </div>
                 <div class="call-modal-form">
                     <form action="form.php">
                         <fieldset>
-                            <input type="text" name="" value="" placeholder="Имя">
+                            <input type="text" name="" value="" placeholder="Имя" required>
                         </fieldset>
                         <fieldset>
-                            <input type="text" name="" value="" placeholder="Телефон">
+                            <input type="text" name="" value="" placeholder="Телефон" required>
                         </fieldset>
                         <fieldset>
                             <button type="submit" name="button">Оставить заявку</button>
@@ -110,24 +110,42 @@
                 </div>
                 <div class="call-modal-contacts">
                     <ul>
-                        <li><span>Адрес:</span> </li>
-                        <li><p>г. Новосибирск, ул. Станционная, 60/9</p> </li>
-                        <li><span>Телефон:</span> </li>
-                        <li><a href="tel:+79133761188" class="underline">+7 (913) 376-11-88</a> </li>
-                        <li><span>E-mail:</span> </li>
-                        <li><a href="mailto:pedangroup@gmail.com" class="underline">pedangroup@gmail.com</a> </li>
+                        <li>
+                            <div class="contact-icon">
+                                <img src="assets/img/icons/address-dark.svg" alt="Адрес:">
+                            </div>
+                            <div class="contact-description modal-dark">
+                                <p>г. Новосибирск, ул. Станционная, 60/9</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="contact-icon">
+                                <img src="assets/img/icons/phone.svg" alt="Телефон:">
+                            </div>
+                            <div class="contact-description">
+                                <a href="tel:+79133761188">+7 (913) 376-11-88</a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="contact-icon">
+                                <img src="assets/img/icons/email-dark.svg" alt="E-mail:">
+                            </div>
+                            <div class="contact-description">
+                                <a href="mailto:pedangroup@gmail.com">pedangroup@gmail.com</a>
+                            </div>
+                        </li>
                     </ul>
                 </div>
             </div>
             <!-- Menu Aside -->
-            <div class="menu-modal transition">
+            <div class="menu-modal transition" id="menuModal">
                 <div class="menu-modal-container">
                     <ul class="aside-menu-navigation">
                         <li><a href="index.html">Главная</a> </li>
                         <li><a href="formats.html">Форматы</a> </li>
                         <li><a href="menu.html">Меню</a> </li>
                         <li><a href="about.html">О нас</a> </li>
-                        <li><a onclick="scrollToContacts();">Контакты</a> </li>
+                        <li><a onclick="scrollWin('contacts');">Контакты</a> </li>
                         <li> <a href="request.html">Заказать</a> </li>
                     </ul>
                     <div class="menu-social-title">
@@ -155,16 +173,2335 @@
             <!-- Меню -->
             <section class="section-menu">
                 <div class="section-inner page-inner">
-                    <div class="close-menu">
-                        <!-- <img src="assets/img/icons/arrow-down.svg" alt="Закрыть"> -->
+                    <div class="close-menu" id="closeAllLists">
                         <svg viewBox="0 0 129 129" xmlns:xlink="http://www.w3.org/1999/xlink" enable-background="new 0 0 129 129">
                           <g>
                             <path fill="#fff" d="m121.3,34.6c-1.6-1.6-4.2-1.6-5.8,0l-51,51.1-51.1-51.1c-1.6-1.6-4.2-1.6-5.8,0-1.6,1.6-1.6,4.2 0,5.8l53.9,53.9c0.8,0.8 1.8,1.2 2.9,1.2 1,0 2.1-0.4 2.9-1.2l53.9-53.9c1.7-1.6 1.7-4.2 0.1-5.8z"/>
                           </g>
                         </svg>
                     </div>
-                    <!-- Заполняется итерацией по массиву -->
+                    <!-- Контейнер для списков меню -->
                     <div class="menu-container" id="menuContainer">
+                        <!-- Menu List Start -->
+                        <div class="menulist-item">
+                            <div class="menulist-title">
+                                <h3>Кофе-брейк</h3>
+                                <img class="arrow-icon" src="assets/img/icons/arrow-down.svg" alt="Открыть" >
+                            </div>
+                            <div class="menulist-content">
+
+                                <!-- Group Start -->
+                                <div class="product-group">
+                                    <div class="product-category">
+                                        <p data-icon="&#43;">Мини-сэндвичи</p>
+                                    </div>
+                                    <div class="product-wrapper">
+
+                                        <div class="product-item">
+                                            <div class="product-header">
+                                                <p class="product-title">Мини-сэндвич с семгой</p>
+                                                <p class="product-description"></p>
+                                            </div>
+                                            <div class="product-chars">
+                                                <p class="product-weight">45 г.</p>
+                                                <p class="product-price">110 руб.</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="product-item">
+                                            <div class="product-header">
+                                                <p class="product-title">Мини-сэндвич с куриной грудкой и беконом</p>
+                                                <p class="product-description"></p>
+                                            </div>
+                                            <div class="product-chars">
+                                                <p class="product-weight">45 г.</p>
+                                                <p class="product-price">80 руб.</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="product-item">
+                                            <div class="product-header">
+                                                <p class="product-title">Мини-сэндвич с ветчиной и сыром</p>
+                                                <p class="product-description"></p>
+                                            </div>
+                                            <div class="product-chars">
+                                                <p class="product-weight">45 г.</p>
+                                                <p class="product-price">80 руб.</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="product-item">
+                                            <div class="product-header">
+                                                <p class="product-title">Мини-сэндвич с печеными овощами и алдыгейским сыром</p>
+                                                <p class="product-description"></p>
+                                            </div>
+                                            <div class="product-chars">
+                                                <p class="product-weight">45 г.</p>
+                                                <p class="product-price">80 руб.</p>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <!-- Group End -->
+
+                                <!-- Group Start -->
+                                <div class="product-group">
+                                    <div class="product-category">
+                                        <p data-icon="&#43;">Мини-бейглы</p>
+                                    </div>
+                                    <div class="product-wrapper">
+
+                                        <div class="product-item">
+                                            <div class="product-header">
+                                                <p class="product-title">Мини-бейгл с семгой и сливочным сыром</p>
+                                                <p class="product-description"></p>
+                                            </div>
+                                            <div class="product-chars">
+                                                <p class="product-weight">40 г.</p>
+                                                <p class="product-price">110 руб.</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="product-item">
+                                            <div class="product-header">
+                                                <p class="product-title">Мини-бейгл с с куриной грудкой</p>
+                                                <p class="product-description"></p>
+                                            </div>
+                                            <div class="product-chars">
+                                                <p class="product-weight">40 г.</p>
+                                                <p class="product-price">75 руб.</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="product-item">
+                                            <div class="product-header">
+                                                <p class="product-title">Мини-бейгл с сыром моцарелла и свежими томатами</p>
+                                                <p class="product-description"></p>
+                                            </div>
+                                            <div class="product-chars">
+                                                <p class="product-weight">40 г.</p>
+                                                <p class="product-price">75 руб.</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="product-item">
+                                            <div class="product-header">
+                                                <p class="product-title">Мини-бейгл с домашней бужениной и сливочным маслом</p>
+                                                <p class="product-description"></p>
+                                            </div>
+                                            <div class="product-chars">
+                                                <p class="product-weight">40 г.</p>
+                                                <p class="product-price">75 руб.</p>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <!-- Group End -->
+
+                                <!-- Group Start -->
+                                <div class="product-group">
+                                    <div class="product-category">
+                                        <p data-icon="&#43;">Мини-пирожки, слойки</p>
+                                    </div>
+                                    <div class="product-wrapper">
+
+                                        <div class="product-item">
+                                            <div class="product-header">
+                                                <p class="product-title">Слойка с ветчиной и сыром</p>
+                                                <p class="product-description"></p>
+                                            </div>
+                                            <div class="product-chars">
+                                                <p class="product-weight">40 г.</p>
+                                                <p class="product-price">50 руб.</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="product-item">
+                                            <div class="product-header">
+                                                <p class="product-title">Слойка с курицей и грибами</p>
+                                                <p class="product-description"></p>
+                                            </div>
+                                            <div class="product-chars">
+                                                <p class="product-weight">40 г.</p>
+                                                <p class="product-price">50 руб.</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="product-item">
+                                            <div class="product-header">
+                                                <p class="product-title">Слойка с капустой и яйцом</p>
+                                                <p class="product-description"></p>
+                                            </div>
+                                            <div class="product-chars">
+                                                <p class="product-weight">40 г.</p>
+                                                <p class="product-price">50 руб.</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="product-item">
+                                            <div class="product-header">
+                                                <p class="product-title">Слойка с рыбой</p>
+                                                <p class="product-description"></p>
+                                            </div>
+                                            <div class="product-chars">
+                                                <p class="product-weight">40 г.</p>
+                                                <p class="product-price">50 руб.</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="product-item">
+                                            <div class="product-header">
+                                                <p class="product-title">Слойка с сайрой и зеленым луком</p>
+                                                <p class="product-description"></p>
+                                            </div>
+                                            <div class="product-chars">
+                                                <p class="product-weight">40 г.</p>
+                                                <p class="product-price">50 руб.</p>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <!-- Group End -->
+
+                                <!-- Group Start -->
+                                <div class="product-group">
+                                    <div class="product-category">
+                                        <p data-icon="&#43;">Десерты</p>
+                                    </div>
+                                    <div class="product-wrapper">
+
+                                        <div class="product-item">
+                                            <div class="product-header">
+                                                <p class="product-title">Печенье в ассортименте</p>
+                                                <p class="product-description"></p>
+                                            </div>
+                                            <div class="product-chars">
+                                                <p class="product-weight">100 г.</p>
+                                                <p class="product-price">115 руб.</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="product-item">
+                                            <div class="product-header">
+                                                <p class="product-title">Панкота с манговым пюре</p>
+                                                <p class="product-description"></p>
+                                            </div>
+                                            <div class="product-chars">
+                                                <p class="product-weight">50 г.</p>
+                                                <p class="product-price">110 руб.</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="product-item">
+                                            <div class="product-header">
+                                                <p class="product-title">Шоколадный мусс</p>
+                                                <p class="product-description"></p>
+                                            </div>
+                                            <div class="product-chars">
+                                                <p class="product-weight">50 г.</p>
+                                                <p class="product-price">110 руб.</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="product-item">
+                                            <div class="product-header">
+                                                <p class="product-title">Конфеты, трюфели в ассортименте</p>
+                                                <p class="product-description"></p>
+                                            </div>
+                                            <div class="product-chars">
+                                                <p class="product-weight">10-15 г.</p>
+                                                <p class="product-price">70 руб.</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="product-item">
+                                            <div class="product-header">
+                                                <p class="product-title">Фруктовое ассорти</p>
+                                                <p class="product-description">Ананас, груша, яблоко, физалис, виноград, апельсин, клубника</p>
+                                            </div>
+                                            <div class="product-chars">
+                                                <p class="product-weight">1000 г.</p>
+                                                <p class="product-price">1800 руб.</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="product-item">
+                                            <div class="product-header">
+                                                <p class="product-title">Ягодно-фруктовое плато</p>
+                                                <p class="product-description">Клубника, голубика, красная смородина, ежевика, виноград, ананас, груша, физалис</p>
+                                            </div>
+                                            <div class="product-chars">
+                                                <p class="product-weight">1000 г.</p>
+                                                <p class="product-price">3500 руб.</p>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <!-- Group End -->
+
+                                <!-- Group Start -->
+                                <div class="product-group">
+                                    <div class="product-category">
+                                        <p data-icon="&#43;">Напитки</p>
+                                    </div>
+                                    <div class="product-wrapper">
+
+                                        <div class="product-item">
+                                            <div class="product-header">
+                                                <p class="product-title">Чай черный / зеленый</p>
+                                                <p class="product-description"></p>
+                                            </div>
+                                            <div class="product-chars">
+                                                <p class="product-weight">200 мл.</p>
+                                                <p class="product-price">50 руб.</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="product-item">
+                                            <div class="product-header">
+                                                <p class="product-title">Кофе черный / с молоком</p>
+                                                <p class="product-description"></p>
+                                            </div>
+                                            <div class="product-chars">
+                                                <p class="product-weight">200 мл.</p>
+                                                <p class="product-price">50 руб.</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="product-item">
+                                            <div class="product-header">
+                                                <p class="product-title">Морс клюквенный</p>
+                                                <p class="product-description"></p>
+                                            </div>
+                                            <div class="product-chars">
+                                                <p class="product-weight">1000 мл.</p>
+                                                <p class="product-price">350 руб.</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="product-item">
+                                            <div class="product-header">
+                                                <p class="product-title">Морс облепиховый</p>
+                                                <p class="product-description"></p>
+                                            </div>
+                                            <div class="product-chars">
+                                                <p class="product-weight">1000 мл.</p>
+                                                <p class="product-price">350 руб.</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="product-item">
+                                            <div class="product-header">
+                                                <p class="product-title">Морс из черной смородины</p>
+                                                <p class="product-description"></p>
+                                            </div>
+                                            <div class="product-chars">
+                                                <p class="product-weight">1000 мл.</p>
+                                                <p class="product-price">350 руб.</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="product-item">
+                                            <div class="product-header">
+                                                <p class="product-title">Морс из лесной ягоды</p>
+                                                <p class="product-description"></p>
+                                            </div>
+                                            <div class="product-chars">
+                                                <p class="product-weight">1000 мл.</p>
+                                                <p class="product-price">350 руб.</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="product-item">
+                                            <div class="product-header">
+                                                <p class="product-title">Вода газированная / негазированная</p>
+                                                <p class="product-description"></p>
+                                            </div>
+                                            <div class="product-chars">
+                                                <p class="product-weight">500 мл.</p>
+                                                <p class="product-price">100 руб.</p>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <!-- Group End -->
+
+                            </div>
+                        </div>
+
+                        <!-- Menu List End -->
+
+                        <!-- Menu List Start -->
+                        <div class="menulist-item">
+                            <div class="menulist-title">
+                                <h3>Фуршет</h3>
+                                <img class="arrow-icon" src="assets/img/icons/arrow-down.svg" alt="Открыть" >
+                            </div>
+                            <div class="menulist-content">
+
+                                <!-- Group Start -->
+                                <div class="product-group">
+                                    <div class="product-category">
+                                        <p data-icon="&#43;">Канапе с рыбой</p>
+                                    </div>
+                                    <div class="product-wrapper">
+
+                                        <div class="product-item">
+                                            <div class="product-header">
+                                                <p class="product-title">Сельдь с картофелем нуазетт</p>
+                                                <p class="product-description"></p>
+                                            </div>
+                                            <div class="product-chars">
+                                                <p class="product-weight">20 г.</p>
+                                                <p class="product-price">80 руб.</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="product-item">
+                                            <div class="product-header">
+                                                <p class="product-title">Тигровая креветка-гриль</p>
+                                                <p class="product-description"></p>
+                                            </div>
+                                            <div class="product-chars">
+                                                <p class="product-weight">15 г.</p>
+                                                <p class="product-price">120 руб.</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="product-item">
+                                            <div class="product-header">
+                                                <p class="product-title">Канапе из копченого угря со свежим огурцом и кунжутом</p>
+                                                <p class="product-description"></p>
+                                            </div>
+                                            <div class="product-chars">
+                                                <p class="product-weight">20 г.</p>
+                                                <p class="product-price">120 руб.</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="product-item">
+                                            <div class="product-header">
+                                                <p class="product-title">Пшеничные блинчики со сливочным сыром и красной икрой</p>
+                                                <p class="product-description"></p>
+                                            </div>
+                                            <div class="product-chars">
+                                                <p class="product-weight">25 г.</p>
+                                                <p class="product-price">120 руб.</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="product-item">
+                                            <div class="product-header">
+                                                <p class="product-title">Лосось слабосоленый на хрустящей брускетте</p>
+                                                <p class="product-description"></p>
+                                            </div>
+                                            <div class="product-chars">
+                                                <p class="product-weight">20 г.</p>
+                                                <p class="product-price">120 руб.</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="product-item">
+                                            <div class="product-header">
+                                                <p class="product-title">Филе тунца печенное в перце с тайским соусом, свежим огурцом и картофелем пай</p>
+                                                <p class="product-description"></p>
+                                            </div>
+                                            <div class="product-chars">
+                                                <p class="product-weight">20 г.</p>
+                                                <p class="product-price">140 руб.</p>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <!-- Group End -->
+
+                                <!-- Group Start -->
+                                <div class="product-group">
+                                    <div class="product-category">
+                                        <p data-icon="&#43;">Канапе с мясными деликатесами</p>
+                                    </div>
+                                    <div class="product-wrapper">
+
+                                        <div class="product-item">
+                                            <div class="product-header">
+                                                <p class="product-title">Сыровяленая Пармская ветчина с карамелизированной грушей</p>
+                                                <p class="product-description"></p>
+                                            </div>
+                                            <div class="product-chars">
+                                                <p class="product-weight">15 г.</p>
+                                                <p class="product-price">140 руб.</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="product-item">
+                                            <div class="product-header">
+                                                <p class="product-title">Ростбиф с овощным Рататуем</p>
+                                                <p class="product-description"></p>
+                                            </div>
+                                            <div class="product-chars">
+                                                <p class="product-weight">20 г.</p>
+                                                <p class="product-price">130 руб.</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="product-item">
+                                            <div class="product-header">
+                                                <p class="product-title">Утиная грудка с грушей томленной в вине</p>
+                                                <p class="product-description"></p>
+                                            </div>
+                                            <div class="product-chars">
+                                                <p class="product-weight">20 г.</p>
+                                                <p class="product-price">120 руб.</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="product-item">
+                                            <div class="product-header">
+                                                <p class="product-title">Куринный паштет с луковым конфитюром</p>
+                                                <p class="product-description"></p>
+                                            </div>
+                                            <div class="product-chars">
+                                                <p class="product-weight">25 г.</p>
+                                                <p class="product-price">90 руб.</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="product-item">
+                                            <div class="product-header">
+                                                <p class="product-title">Сочная говядина с перепелиным яйцом</p>
+                                                <p class="product-description"></p>
+                                            </div>
+                                            <div class="product-chars">
+                                                <p class="product-weight">20 г.</p>
+                                                <p class="product-price">120 руб.</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="product-item">
+                                            <div class="product-header">
+                                                <p class="product-title">Домашняя буженина со сливовым соусом</p>
+                                                <p class="product-description"></p>
+                                            </div>
+                                            <div class="product-chars">
+                                                <p class="product-weight">15 г.</p>
+                                                <p class="product-price">110 руб.</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="product-item">
+                                            <div class="product-header">
+                                                <p class="product-title">Яйца Бенедикт с ветчиной</p>
+                                                <p class="product-description"></p>
+                                            </div>
+                                            <div class="product-chars">
+                                                <p class="product-weight">20 г.</p>
+                                                <p class="product-price">110 руб.</p>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <!-- Group End -->
+
+                                <!-- Group Start -->
+                                <div class="product-group">
+                                    <div class="product-category">
+                                        <p data-icon="&#43;">Канапе с овощами</p>
+                                    </div>
+                                    <div class="product-wrapper">
+
+                                        <div class="product-item">
+                                            <div class="product-header">
+                                                <p class="product-title">Сыр Бри с фруктовой горчицей</p>
+                                                <p class="product-description"></p>
+                                            </div>
+                                            <div class="product-chars">
+                                                <p class="product-weight">15 г.</p>
+                                                <p class="product-price">110 руб.</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="product-item">
+                                            <div class="product-header">
+                                                <p class="product-title">Томаты Черри с мини-моцареллой, свежим базиликом и соусом "Песто"</p>
+                                                <p class="product-description"></p>
+                                            </div>
+                                            <div class="product-chars">
+                                                <p class="product-weight">20 г.</p>
+                                                <p class="product-price">110 руб.</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="product-item">
+                                            <div class="product-header">
+                                                <p class="product-title">Рулетики из баклажан с кремом из сметаны кинзы</p>
+                                                <p class="product-description"></p>
+                                            </div>
+                                            <div class="product-chars">
+                                                <p class="product-weight">20 г.</p>
+                                                <p class="product-price">85 руб.</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="product-item">
+                                            <div class="product-header">
+                                                <p class="product-title">Хумус с питой и овощным крудите</p>
+                                                <p class="product-description"></p>
+                                            </div>
+                                            <div class="product-chars">
+                                                <p class="product-weight">20 г.</p>
+                                                <p class="product-price">80 руб.</p>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <!-- Group End -->
+
+                                <!-- Group Start -->
+                                <div class="product-group">
+                                    <div class="product-category">
+                                        <p data-icon="&#43;">Мини-сэндвичи и бейглы</p>
+                                    </div>
+                                    <div class="product-wrapper">
+
+                                        <div class="product-item">
+                                            <div class="product-header">
+                                                <p class="product-title">Мини-сэндвич с семгой</p>
+                                                <p class="product-description"></p>
+                                            </div>
+                                            <div class="product-chars">
+                                                <p class="product-weight">45 г.</p>
+                                                <p class="product-price">120 руб.</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="product-item">
+                                            <div class="product-header">
+                                                <p class="product-title">Мини-сэндвич с куриной грудкой и беконом</p>
+                                                <p class="product-description"></p>
+                                            </div>
+                                            <div class="product-chars">
+                                                <p class="product-weight">45 г.</p>
+                                                <p class="product-price">90 руб.</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="product-item">
+                                            <div class="product-header">
+                                                <p class="product-title">Мини-сэндвич с ветчиной и сыром</p>
+                                                <p class="product-description"></p>
+                                            </div>
+                                            <div class="product-chars">
+                                                <p class="product-weight">45 г.</p>
+                                                <p class="product-price">90 руб.</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="product-item">
+                                            <div class="product-header">
+                                                <p class="product-title">Мини-сэндвич с печеными овощами и алдыгейским сыром</p>
+                                                <p class="product-description"></p>
+                                            </div>
+                                            <div class="product-chars">
+                                                <p class="product-weight">45 г.</p>
+                                                <p class="product-price">90 руб.</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="product-item">
+                                            <div class="product-header">
+                                                <p class="product-title">Бейгл с семгой и сливочным сыром</p>
+                                                <p class="product-description"></p>
+                                            </div>
+                                            <div class="product-chars">
+                                                <p class="product-weight">40 г.</p>
+                                                <p class="product-price">120 руб.</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="product-item">
+                                            <div class="product-header">
+                                                <p class="product-title">Бейгл с с куриной грудкой</p>
+                                                <p class="product-description"></p>
+                                            </div>
+                                            <div class="product-chars">
+                                                <p class="product-weight">40 г.</p>
+                                                <p class="product-price">85 руб.</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="product-item">
+                                            <div class="product-header">
+                                                <p class="product-title">Бейгл с сыром моцарелла и свежими томатами</p>
+                                                <p class="product-description"></p>
+                                            </div>
+                                            <div class="product-chars">
+                                                <p class="product-weight">40 г.</p>
+                                                <p class="product-price">85 руб.</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="product-item">
+                                            <div class="product-header">
+                                                <p class="product-title">Бейгл с домашней бужениной и сливочным маслом</p>
+                                                <p class="product-description"></p>
+                                            </div>
+                                            <div class="product-chars">
+                                                <p class="product-weight">40 г.</p>
+                                                <p class="product-price">85 руб.</p>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <!-- Group End -->
+
+                                <!-- Group Start -->
+                                <div class="product-group">
+                                    <div class="product-category">
+                                        <p data-icon="&#43;">Салаты</p>
+                                    </div>
+                                    <div class="product-wrapper">
+
+                                        <div class="product-item">
+                                            <div class="product-header">
+                                                <p class="product-title">Салат Цезарь с куриной грудкой</p>
+                                                <p class="product-description"></p>
+                                            </div>
+                                            <div class="product-chars">
+                                                <p class="product-weight">125 г.</p>
+                                                <p class="product-price">190 руб.</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="product-item">
+                                            <div class="product-header">
+                                                <p class="product-title">Салат Цезарь с тигровыми креветками</p>
+                                                <p class="product-description"></p>
+                                            </div>
+                                            <div class="product-chars">
+                                                <p class="product-weight">90 г.</p>
+                                                <p class="product-price">320 руб.</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="product-item">
+                                            <div class="product-header">
+                                                <p class="product-title">Салат с ростбифом</p>
+                                                <p class="product-description"></p>
+                                            </div>
+                                            <div class="product-chars">
+                                                <p class="product-weight">80 г.</p>
+                                                <p class="product-price">230 руб.</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="product-item">
+                                            <div class="product-header">
+                                                <p class="product-title">Салат Греческий</p>
+                                                <p class="product-description"></p>
+                                            </div>
+                                            <div class="product-chars">
+                                                <p class="product-weight">90 г.</p>
+                                                <p class="product-price">160 руб.</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="product-item">
+                                            <div class="product-header">
+                                                <p class="product-title">Салат с семгой слабой соли c картофелем красным луком и каперсами с медово-горчичным соусом</p>
+                                                <p class="product-description"></p>
+                                            </div>
+                                            <div class="product-chars">
+                                                <p class="product-weight">90 г.</p>
+                                                <p class="product-price">250 руб.</p>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <!-- Group End -->
+
+                                <!-- Group Start -->
+                                <div class="product-group">
+                                    <div class="product-category">
+                                        <p data-icon="&#43;">Ассорти</p>
+                                    </div>
+                                    <div class="product-wrapper">
+
+                                        <div class="product-item">
+                                            <div class="product-header">
+                                                <p class="product-title">Мясная гастрономия</p>
+                                                <p class="product-description">Сыровяленный свиной окорок, ростбиф из говяжей вырезки, утиная грудка, домашняя буженина, телячий язык подается с маринованным луком, гресини и грушей, томленной в красном вине</p>
+                                            </div>
+                                            <div class="product-chars">
+                                                <p class="product-weight">1000 г.</p>
+                                                <p class="product-price">3200 руб.</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="product-item">
+                                            <div class="product-header">
+                                                <p class="product-title">Мясное ассорти</p>
+                                                <p class="product-description">Домашняя буженина в чесночном маринаде, ростбиф из говядины, телячий язык, сервелат, подается со свежими листьями салата, помидорами черри и пикантным сливочным соусом хрен</p>
+                                            </div>
+                                            <div class="product-chars">
+                                                <p class="product-weight">1000 г.</p>
+                                                <p class="product-price">2800 руб.</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="product-item">
+                                            <div class="product-header">
+                                                <p class="product-title">Рыбная гастрономия</p>
+                                                <p class="product-description">Тигровые креветки, семга слабосоленая, семга холодного копчения, масляная рыба холодного копчения, угорь копченный подается с лимоном и горчично-медовым соусом</p>
+                                            </div>
+                                            <div class="product-chars">
+                                                <p class="product-weight">1000 г.</p>
+                                                <p class="product-price">3500 руб.</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="product-item">
+                                            <div class="product-header">
+                                                <p class="product-title">Рыбное ассорти</p>
+                                                <p class="product-description">Семга холодного копчения, муксун холодного копчения, филе сельди, нерка холодного копчения подаётся с лимоном, горчично-медовым соусом</p>
+                                            </div>
+                                            <div class="product-chars">
+                                                <p class="product-weight">1000 г.</p>
+                                                <p class="product-price">2800 руб.</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="product-item">
+                                            <div class="product-header">
+                                                <p class="product-title">Сыры</p>
+                                                <p class="product-description">Бри, с голубой плесенью, Пармезан, Моцарелла, сыр козий, чеддер, подается с виноградом, медом, черносливом, курагой, орехами</p>
+                                            </div>
+                                            <div class="product-chars">
+                                                <p class="product-weight">1000 г.</p>
+                                                <p class="product-price">2700 руб.</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="product-item">
+                                            <div class="product-header">
+                                                <p class="product-title">Овощное ассорти</p>
+                                                <p class="product-description">Cвежие помидоры и огурцы, сладкий перец, ароматная зелень, подается с классическим пряным соусом "Винегрет"</p>
+                                            </div>
+                                            <div class="product-chars">
+                                                <p class="product-weight">1000 г.</p>
+                                                <p class="product-price">800 руб.</p>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <!-- Group End -->
+
+                                <!-- Group Start -->
+                                <div class="product-group">
+                                    <div class="product-category">
+                                        <p data-icon="&#43;">Горячие закуски</p>
+                                    </div>
+                                    <div class="product-wrapper">
+
+                                        <div class="product-item">
+                                            <div class="product-header">
+                                                <p class="product-title">Медальоны из говядины деми гляс</p>
+                                                <p class="product-description"></p>
+                                            </div>
+                                            <div class="product-chars">
+                                                <p class="product-weight">50/10 г.</p>
+                                                <p class="product-price">280 руб.</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="product-item">
+                                            <div class="product-header">
+                                                <p class="product-title">Шашлычок из семги с соусом "тар-тар", лимоном</p>
+                                                <p class="product-description"></p>
+                                            </div>
+                                            <div class="product-chars">
+                                                <p class="product-weight">50/5 г.</p>
+                                                <p class="product-price">290 руб.</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="product-item">
+                                            <div class="product-header">
+                                                <p class="product-title">Каре ягненка</p>
+                                                <p class="product-description"></p>
+                                            </div>
+                                            <div class="product-chars">
+                                                <p class="product-weight">50/5 г.</p>
+                                                <p class="product-price">290 руб.</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="product-item">
+                                            <div class="product-header">
+                                                <p class="product-title">Тигровые креветки в миндальных лепестках с соусом свит чили</p>
+                                                <p class="product-description"></p>
+                                            </div>
+                                            <div class="product-chars">
+                                                <p class="product-weight">50/5 г.</p>
+                                                <p class="product-price">350 руб.</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="product-item">
+                                            <div class="product-header">
+                                                <p class="product-title">Шашлычки из куриного филе с йогуртовым соусом</p>
+                                                <p class="product-description"></p>
+                                            </div>
+                                            <div class="product-chars">
+                                                <p class="product-weight">50/5 г.</p>
+                                                <p class="product-price">120 руб.</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="product-item">
+                                            <div class="product-header">
+                                                <p class="product-title">Медальоны из свиной вырезки в беконе с грибным соусом</p>
+                                                <p class="product-description"></p>
+                                            </div>
+                                            <div class="product-chars">
+                                                <p class="product-weight">50 г.</p>
+                                                <p class="product-price">190 руб.</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="product-item">
+                                            <div class="product-header">
+                                                <p class="product-title">Мини-голубцы из мяса цыпленка с добавлением сыра Фета</p>
+                                                <p class="product-description"></p>
+                                            </div>
+                                            <div class="product-chars">
+                                                <p class="product-weight">50 г.</p>
+                                                <p class="product-price">120 руб.</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="product-item">
+                                            <div class="product-header">
+                                                <p class="product-title">Жульен из языка с белыми грибами в сливочном соусе</p>
+                                                <p class="product-description"></p>
+                                            </div>
+                                            <div class="product-chars">
+                                                <p class="product-weight">50 г.</p>
+                                                <p class="product-price">120 руб.</p>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <!-- Group End -->
+
+                                <!-- Group Start -->
+                                <div class="product-group">
+                                    <div class="product-category">
+                                        <p data-icon="&#43;">Гарниры</p>
+                                    </div>
+                                    <div class="product-wrapper">
+
+                                        <div class="product-item">
+                                            <div class="product-header">
+                                                <p class="product-title">Овощи гриль</p>
+                                                <p class="product-description"></p>
+                                            </div>
+                                            <div class="product-chars">
+                                                <p class="product-weight">100 г.</p>
+                                                <p class="product-price">180 руб.</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="product-item">
+                                            <div class="product-header">
+                                                <p class="product-title">Картофельный гратин</p>
+                                                <p class="product-description"></p>
+                                            </div>
+                                            <div class="product-chars">
+                                                <p class="product-weight">100 г.</p>
+                                                <p class="product-price">100 руб.</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="product-item">
+                                            <div class="product-header">
+                                                <p class="product-title">Золотистый обжаренный картофель с зеленью</p>
+                                                <p class="product-description"></p>
+                                            </div>
+                                            <div class="product-chars">
+                                                <p class="product-weight">100г.</p>
+                                                <p class="product-price">70 руб.</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="product-item">
+                                            <div class="product-header">
+                                                <p class="product-title">Булгур с овощами</p>
+                                                <p class="product-description"></p>
+                                            </div>
+                                            <div class="product-chars">
+                                                <p class="product-weight">100 г.</p>
+                                                <p class="product-price">100 руб.</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="product-item">
+                                            <div class="product-header">
+                                                <p class="product-title">Рис басмати с овощами / или приготовленный на пару</p>
+                                                <p class="product-description"></p>
+                                            </div>
+                                            <div class="product-chars">
+                                                <p class="product-weight">100 г.</p>
+                                                <p class="product-price">90 руб.</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="product-item">
+                                            <div class="product-header">
+                                                <p class="product-title">Смесь классического длиннозерного и дикого риса в сливочном соусе</p>
+                                                <p class="product-description"></p>
+                                            </div>
+                                            <div class="product-chars">
+                                                <p class="product-weight">100 г.</p>
+                                                <p class="product-price">90 руб.</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="product-item">
+                                            <div class="product-header">
+                                                <p class="product-title">Кус кус с томатами</p>
+                                                <p class="product-description"></p>
+                                            </div>
+                                            <div class="product-chars">
+                                                <p class="product-weight">100 г.</p>
+                                                <p class="product-price">90 руб.</p>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <!-- Group End -->
+
+                                <!-- Group Start -->
+                                <div class="product-group">
+                                    <div class="product-category">
+                                        <p data-icon="&#43;">Десерты</p>
+                                    </div>
+                                    <div class="product-wrapper">
+
+                                        <div class="product-item">
+                                            <div class="product-header">
+                                                <p class="product-title">Печенье в ассортименте</p>
+                                                <p class="product-description"></p>
+                                            </div>
+                                            <div class="product-chars">
+                                                <p class="product-weight">100 г.</p>
+                                                <p class="product-price">115 руб.</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="product-item">
+                                            <div class="product-header">
+                                                <p class="product-title">Панкота с манговым пюре</p>
+                                                <p class="product-description"></p>
+                                            </div>
+                                            <div class="product-chars">
+                                                <p class="product-weight">50 г.</p>
+                                                <p class="product-price">110 руб.</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="product-item">
+                                            <div class="product-header">
+                                                <p class="product-title">Шоколадный мусс</p>
+                                                <p class="product-description"></p>
+                                            </div>
+                                            <div class="product-chars">
+                                                <p class="product-weight">50.</p>
+                                                <p class="product-price">110 руб.</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="product-item">
+                                            <div class="product-header">
+                                                <p class="product-title">Конфеты, трюфели в ассортименте</p>
+                                                <p class="product-description"></p>
+                                            </div>
+                                            <div class="product-chars">
+                                                <p class="product-weight">20 г.</p>
+                                                <p class="product-price">60 руб.</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="product-item">
+                                            <div class="product-header">
+                                                <p class="product-title">Датская выпечка</p>
+                                                <p class="product-description"></p>
+                                            </div>
+                                            <div class="product-chars">
+                                                <p class="product-weight">45 г.</p>
+                                                <p class="product-price">100 руб.</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="product-item">
+                                            <div class="product-header">
+                                                <p class="product-title">Сезонные фрукты</p>
+                                                <p class="product-description">Ананас, груша, яблоко, физалис, виноград, мандарин, клубника</p>
+                                            </div>
+                                            <div class="product-chars">
+                                                <p class="product-weight">1000 г.</p>
+                                                <p class="product-price">1800 руб.</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="product-item">
+                                            <div class="product-header">
+                                                <p class="product-title">Ягодно-фруктовое плато</p>
+                                                <p class="product-description">Клубника, голубика, красная смородина, ежевика, виноград, ананас, груша, физалис</p>
+                                            </div>
+                                            <div class="product-chars">
+                                                <p class="product-weight">1000 г.</p>
+                                                <p class="product-price">3500 руб.</p>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <!-- Group End -->
+
+                                <!-- Group Start -->
+                                <div class="product-group">
+                                    <div class="product-category">
+                                        <p data-icon="&#43;">Хлеб</p>
+                                    </div>
+                                    <div class="product-wrapper">
+
+                                        <div class="product-item">
+                                            <div class="product-header">
+                                                <p class="product-title">Хлебная корзина</p>
+                                                <p class="product-description"></p>
+                                            </div>
+                                            <div class="product-chars">
+                                                <p class="product-weight">100 г.</p>
+                                                <p class="product-price">50 руб.</p>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <!-- Group End -->
+
+                            </div>
+                        </div>
+
+                        <!-- Menu List End -->
+
+                        <!-- Menu List Start -->
+                        <div class="menulist-item">
+                            <div class="menulist-title">
+                                <h3>Банкет</h3>
+                                <img class="arrow-icon" src="assets/img/icons/arrow-down.svg" alt="Открыть" >
+                            </div>
+                            <div class="menulist-content">
+
+                                <!-- Group Start -->
+                                <div class="product-group">
+                                    <div class="product-category">
+                                        <p data-icon="&#43;">Салаты</p>
+                                    </div>
+                                    <div class="product-wrapper">
+
+                                        <div class="product-item">
+                                            <div class="product-header">
+                                                <p class="product-title">Салат Цезарь с куриной грудкой</p>
+                                                <p class="product-description"></p>
+                                            </div>
+                                            <div class="product-chars">
+                                                <p class="product-weight">125 г.</p>
+                                                <p class="product-price">260 руб.</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="product-item">
+                                            <div class="product-header">
+                                                <p class="product-title">Салат Цезарь с тигровыми креветками</p>
+                                                <p class="product-description"></p>
+                                            </div>
+                                            <div class="product-chars">
+                                                <p class="product-weight">125 г.</p>
+                                                <p class="product-price">380 руб.</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="product-item">
+                                            <div class="product-header">
+                                                <p class="product-title">Салат с ростбифом</p>
+                                                <p class="product-description"></p>
+                                            </div>
+                                            <div class="product-chars">
+                                                <p class="product-weight">125 г.</p>
+                                                <p class="product-price">320 руб.</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="product-item">
+                                            <div class="product-header">
+                                                <p class="product-title">Салат Греческий</p>
+                                                <p class="product-description"></p>
+                                            </div>
+                                            <div class="product-chars">
+                                                <p class="product-weight">125 г.</p>
+                                                <p class="product-price">190 руб.</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="product-item">
+                                            <div class="product-header">
+                                                <p class="product-title">Салат с семгой слабой соли</p>
+                                                <p class="product-description"></p>
+                                            </div>
+                                            <div class="product-chars">
+                                                <p class="product-weight">125 г.</p>
+                                                <p class="product-price">280 руб.</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="product-item">
+                                            <div class="product-header">
+                                                <p class="product-title">Салат с домашней бужениной</p>
+                                                <p class="product-description"></p>
+                                            </div>
+                                            <div class="product-chars">
+                                                <p class="product-weight">125 г.</p>
+                                                <p class="product-price">160 руб.</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="product-item">
+                                            <div class="product-header">
+                                                <p class="product-title">Салат оливье с куриной грудкой и языком</p>
+                                                <p class="product-description"></p>
+                                            </div>
+                                            <div class="product-chars">
+                                                <p class="product-weight">125 г.</p>
+                                                <p class="product-price">160 руб.</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="product-item">
+                                            <div class="product-header">
+                                                <p class="product-title">Капрезе с томатами и сыром моцарелла</p>
+                                                <p class="product-description"></p>
+                                            </div>
+                                            <div class="product-chars">
+                                                <p class="product-weight">125 г.</p>
+                                                <p class="product-price">220 руб.</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="product-item">
+                                            <div class="product-header">
+                                                <p class="product-title">Салат из тигровых креветок с перечным желе</p>
+                                                <p class="product-description"></p>
+                                            </div>
+                                            <div class="product-chars">
+                                                <p class="product-weight">125 г.</p>
+                                                <p class="product-price">350 руб.</p>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <!-- Group End -->
+
+                                <!-- Group Start -->
+                                <div class="product-group">
+                                    <div class="product-category">
+                                        <p data-icon="&#43;">Ассорти</p>
+                                    </div>
+                                    <div class="product-wrapper">
+
+                                        <div class="product-item">
+                                            <div class="product-header">
+                                                <p class="product-title">Мясная гастрономия</p>
+                                                <p class="product-description">Сыровяленный свиной окорок, ростбиф из говяжей вырезки, утиная грудка, домашняя буженина, телячий язык подается с маринованным луком, гресини и грушей, томленной в красном вине</p>
+                                            </div>
+                                            <div class="product-chars">
+                                                <p class="product-weight">1000 г.</p>
+                                                <p class="product-price">3200 руб.</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="product-item">
+                                            <div class="product-header">
+                                                <p class="product-title">Мясное ассорти</p>
+                                                <p class="product-description">Домашняя буженина в чесночном маринаде, ростбиф из говядины, телячий язык, сервелат, подается со свежими листьями салата, помидорами черри и пикантным сливочным соусом хрен</p>
+                                            </div>
+                                            <div class="product-chars">
+                                                <p class="product-weight">1000 г.</p>
+                                                <p class="product-price">2800 руб.</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="product-item">
+                                            <div class="product-header">
+                                                <p class="product-title">Рыбная гастрономия</p>
+                                                <p class="product-description">Тигровые креветки, семга слабосоленая, семга холодного копчения, масляная рыба холодного копчения, угорь копченный подается с лимоном и горчично-медовым соусом</p>
+                                            </div>
+                                            <div class="product-chars">
+                                                <p class="product-weight">1000 г.</p>
+                                                <p class="product-price">3500 руб.</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="product-item">
+                                            <div class="product-header">
+                                                <p class="product-title">Рыбное ассорти</p>
+                                                <p class="product-description">Семга холодного копчения, муксун холодного копчения, филе сельди, нерка холодного копчения подаётся с лимоном, горчично-медовым соусом</p>
+                                            </div>
+                                            <div class="product-chars">
+                                                <p class="product-weight">1000 г.</p>
+                                                <p class="product-price">2800 руб.</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="product-item">
+                                            <div class="product-header">
+                                                <p class="product-title">Сыры</p>
+                                                <p class="product-description">Бри, с голубой плесенью, Пармезан, Моцарелла, сыр козий, чеддер, подается с виноградом, медом, черносливом, курагой, орехами</p>
+                                            </div>
+                                            <div class="product-chars">
+                                                <p class="product-weight">1000 г.</p>
+                                                <p class="product-price">2900 руб.</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="product-item">
+                                            <div class="product-header">
+                                                <p class="product-title">Овощное ассорти</p>
+                                                <p class="product-description">Cвежие помидоры и огурцы, сладкий перец, ароматная зелень, подается с классическим пряным соусом "Винегрет"</p>
+                                            </div>
+                                            <div class="product-chars">
+                                                <p class="product-weight">1000 г.</p>
+                                                <p class="product-price">800 руб.</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="product-item">
+                                            <div class="product-header">
+                                                <p class="product-title">Ассорти маринадов</p>
+                                                <p class="product-description">Соленые грузди со сметаной и красным луком, огурцы соленые, томаты черри соленые, капуста квашеная</p>
+                                            </div>
+                                            <div class="product-chars">
+                                                <p class="product-weight">1000 г.</p>
+                                                <p class="product-price">800 руб.</p>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <!-- Group End -->
+
+                                <!-- Group Start -->
+                                <div class="product-group">
+                                    <div class="product-category">
+                                        <p data-icon="&#43;">Горячие закуски</p>
+                                    </div>
+                                    <div class="product-wrapper">
+
+                                        <div class="product-item">
+                                            <div class="product-header">
+                                                <p class="product-title">Медальоны из говядины деми гляс</p>
+                                                <p class="product-description"></p>
+                                            </div>
+                                            <div class="product-chars">
+                                                <p class="product-weight">50/10 г.</p>
+                                                <p class="product-price">280 руб.</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="product-item">
+                                            <div class="product-header">
+                                                <p class="product-title">Шашлычок из семги с соусом "тар-тар", лимоном</p>
+                                                <p class="product-description"></p>
+                                            </div>
+                                            <div class="product-chars">
+                                                <p class="product-weight">50/5 г.</p>
+                                                <p class="product-price">290 руб.</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="product-item">
+                                            <div class="product-header">
+                                                <p class="product-title">Каре ягненка</p>
+                                                <p class="product-description"></p>
+                                            </div>
+                                            <div class="product-chars">
+                                                <p class="product-weight">50/5 г.</p>
+                                                <p class="product-price">290 руб.</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="product-item">
+                                            <div class="product-header">
+                                                <p class="product-title">Тигровые креветки в миндальных лепестках с соусом свит чили</p>
+                                                <p class="product-description"></p>
+                                            </div>
+                                            <div class="product-chars">
+                                                <p class="product-weight">50/5 г.</p>
+                                                <p class="product-price">350 руб.</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="product-item">
+                                            <div class="product-header">
+                                                <p class="product-title">Шашлычки из куриного филе с йогуртовым соусом</p>
+                                                <p class="product-description"></p>
+                                            </div>
+                                            <div class="product-chars">
+                                                <p class="product-weight">50/5 г.</p>
+                                                <p class="product-price">120 руб.</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="product-item">
+                                            <div class="product-header">
+                                                <p class="product-title">Медальоны из свиной вырезки в беконе с грибным соусом</p>
+                                                <p class="product-description"></p>
+                                            </div>
+                                            <div class="product-chars">
+                                                <p class="product-weight">50 г.</p>
+                                                <p class="product-price">190 руб.</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="product-item">
+                                            <div class="product-header">
+                                                <p class="product-title">Мини-голубцы из мяса цыпленка с добавлением сыра Фета</p>
+                                                <p class="product-description"></p>
+                                            </div>
+                                            <div class="product-chars">
+                                                <p class="product-weight">50 г.</p>
+                                                <p class="product-price">120 руб.</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="product-item">
+                                            <div class="product-header">
+                                                <p class="product-title">Жульен из языка с белыми грибами в сливочном соусе</p>
+                                                <p class="product-description"></p>
+                                            </div>
+                                            <div class="product-chars">
+                                                <p class="product-weight">50 г.</p>
+                                                <p class="product-price">120 руб.</p>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <!-- Group End -->
+
+                                <!-- Group Start -->
+                                <div class="product-group">
+                                    <div class="product-category">
+                                        <p data-icon="&#43;">Горячие блюда</p>
+                                    </div>
+                                    <div class="product-wrapper">
+
+                                        <div class="product-item">
+                                            <div class="product-header">
+                                                <p class="product-title">Утиная грудка в винном соусе с томленой грушей</p>
+                                                <p class="product-description"></p>
+                                            </div>
+                                            <div class="product-chars">
+                                                <p class="product-weight">100/30 г.</p>
+                                                <p class="product-price">360 руб.</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="product-item">
+                                            <div class="product-header">
+                                                <p class="product-title">Стейк Филе миньон из говяжьей вырезки с соусом Деми-глясс</p>
+                                                <p class="product-description"></p>
+                                            </div>
+                                            <div class="product-chars">
+                                                <p class="product-weight">100/20 г.</p>
+                                                <p class="product-price">530 руб.</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="product-item">
+                                            <div class="product-header">
+                                                <p class="product-title">Куриная грудка гриль запеченная с сыром моцарелла</p>
+                                                <p class="product-description"></p>
+                                            </div>
+                                            <div class="product-chars">
+                                                <p class="product-weight">100/30 г.</p>
+                                                <p class="product-price">220 руб.</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="product-item">
+                                            <div class="product-header">
+                                                <p class="product-title">Филе индейки в глазури из бальзамического соуса</p>
+                                                <p class="product-description"></p>
+                                            </div>
+                                            <div class="product-chars">
+                                                <p class="product-weight">100/20 г.</p>
+                                                <p class="product-price">320 руб.</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="product-item">
+                                            <div class="product-header">
+                                                <p class="product-title">Домашняя буженина с перечным соусом</p>
+                                                <p class="product-description"></p>
+                                            </div>
+                                            <div class="product-chars">
+                                                <p class="product-weight">100/20 г.</p>
+                                                <p class="product-price">350 руб.</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="product-item">
+                                            <div class="product-header">
+                                                <p class="product-title">Стейк из семги с голландским соусом</p>
+                                                <p class="product-description"></p>
+                                            </div>
+                                            <div class="product-chars">
+                                                <p class="product-weight">100/20 г.</p>
+                                                <p class="product-price">550 руб.</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="product-item">
+                                            <div class="product-header">
+                                                <p class="product-title">Филе судака с овощной эмульсией</p>
+                                                <p class="product-description"></p>
+                                            </div>
+                                            <div class="product-chars">
+                                                <p class="product-weight">100/30 г.</p>
+                                                <p class="product-price">340 руб.</p>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <!-- Group End -->
+
+                                <!-- Group Start -->
+                                <div class="product-group">
+                                    <div class="product-category">
+                                        <p data-icon="&#43;">Гриль меню</p>
+                                    </div>
+                                    <div class="product-wrapper">
+
+                                        <div class="product-item">
+                                            <div class="product-header">
+                                                <p class="product-title">Шашлык из свининой шеи</p>
+                                                <p class="product-description"></p>
+                                            </div>
+                                            <div class="product-chars">
+                                                <p class="product-weight">200 г.</p>
+                                                <p class="product-price">350 руб.</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="product-item">
+                                            <div class="product-header">
+                                                <p class="product-title">Антрекоты из свинины на кости</p>
+                                                <p class="product-description"></p>
+                                            </div>
+                                            <div class="product-chars">
+                                                <p class="product-weight">200 г.</p>
+                                                <p class="product-price">350 руб.</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="product-item">
+                                            <div class="product-header">
+                                                <p class="product-title">Ребра свиные</p>
+                                                <p class="product-description"></p>
+                                            </div>
+                                            <div class="product-chars">
+                                                <p class="product-weight">200 г.</p>
+                                                <p class="product-price">350 руб.</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="product-item">
+                                            <div class="product-header">
+                                                <p class="product-title">Шашлык из куриной грудки</p>
+                                                <p class="product-description"></p>
+                                            </div>
+                                            <div class="product-chars">
+                                                <p class="product-weight">200 г.</p>
+                                                <p class="product-price">250 руб.</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="product-item">
+                                            <div class="product-header">
+                                                <p class="product-title">Кукурузный цыпленок гриль</p>
+                                                <p class="product-description"></p>
+                                            </div>
+                                            <div class="product-chars">
+                                                <p class="product-weight">1 шт.</p>
+                                                <p class="product-price">430 руб.</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="product-item">
+                                            <div class="product-header">
+                                                <p class="product-title">Шашлык из баранины</p>
+                                                <p class="product-description"></p>
+                                            </div>
+                                            <div class="product-chars">
+                                                <p class="product-weight">200 г.</p>
+                                                <p class="product-price">380 руб.</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="product-item">
+                                            <div class="product-header">
+                                                <p class="product-title">Стейк из говядины</p>
+                                                <p class="product-description"></p>
+                                            </div>
+                                            <div class="product-chars">
+                                                <p class="product-weight">100 г.</p>
+                                                <p class="product-price">450 руб.</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="product-item">
+                                            <div class="product-header">
+                                                <p class="product-title">Стейк из семги</p>
+                                                <p class="product-description"></p>
+                                            </div>
+                                            <div class="product-chars">
+                                                <p class="product-weight">250 г.</p>
+                                                <p class="product-price">650 руб.</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="product-item">
+                                            <div class="product-header">
+                                                <p class="product-title">Шашлык из кальмара с красным луком</p>
+                                                <p class="product-description"></p>
+                                            </div>
+                                            <div class="product-chars">
+                                                <p class="product-weight">150 г.</p>
+                                                <p class="product-price">350 руб.</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="product-item">
+                                            <div class="product-header">
+                                                <p class="product-title">Баран приготовленный целиком на огне</p>
+                                                <p class="product-description"></p>
+                                            </div>
+                                            <div class="product-chars">
+                                                <p class="product-weight">1 шт.</p>
+                                                <p class="product-price">договор.</p>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <!-- Group End -->
+
+                                <!-- Group Start -->
+                                <div class="product-group">
+                                    <div class="product-category">
+                                        <p data-icon="&#43;">Гарниры</p>
+                                    </div>
+                                    <div class="product-wrapper">
+
+                                        <div class="product-item">
+                                            <div class="product-header">
+                                                <p class="product-title">Овощи гриль</p>
+                                                <p class="product-description"></p>
+                                            </div>
+                                            <div class="product-chars">
+                                                <p class="product-weight">100 г.</p>
+                                                <p class="product-price">180 руб.</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="product-item">
+                                            <div class="product-header">
+                                                <p class="product-title">Картофельный гратин</p>
+                                                <p class="product-description"></p>
+                                            </div>
+                                            <div class="product-chars">
+                                                <p class="product-weight">100 г.</p>
+                                                <p class="product-price">100 руб.</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="product-item">
+                                            <div class="product-header">
+                                                <p class="product-title">Золотистый обжаренный картофель с зеленью</p>
+                                                <p class="product-description"></p>
+                                            </div>
+                                            <div class="product-chars">
+                                                <p class="product-weight">100г.</p>
+                                                <p class="product-price">70 руб.</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="product-item">
+                                            <div class="product-header">
+                                                <p class="product-title">Булгур с овощами</p>
+                                                <p class="product-description"></p>
+                                            </div>
+                                            <div class="product-chars">
+                                                <p class="product-weight">100 г.</p>
+                                                <p class="product-price">100 руб.</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="product-item">
+                                            <div class="product-header">
+                                                <p class="product-title">Рис басмати с овощами / или приготовленный на пару</p>
+                                                <p class="product-description"></p>
+                                            </div>
+                                            <div class="product-chars">
+                                                <p class="product-weight">100 г.</p>
+                                                <p class="product-price">90 руб.</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="product-item">
+                                            <div class="product-header">
+                                                <p class="product-title">Смесь классического длиннозерного и дикого риса в сливочном соусе</p>
+                                                <p class="product-description"></p>
+                                            </div>
+                                            <div class="product-chars">
+                                                <p class="product-weight">100 г.</p>
+                                                <p class="product-price">90 руб.</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="product-item">
+                                            <div class="product-header">
+                                                <p class="product-title">Кус кус с томатами</p>
+                                                <p class="product-description"></p>
+                                            </div>
+                                            <div class="product-chars">
+                                                <p class="product-weight">100 г.</p>
+                                                <p class="product-price">90 руб.</p>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <!-- Group End -->
+
+                                <!-- Group Start -->
+                                <div class="product-group">
+                                    <div class="product-category">
+                                        <p data-icon="&#43;">Десерты</p>
+                                    </div>
+                                    <div class="product-wrapper">
+
+                                        <div class="product-item">
+                                            <div class="product-header">
+                                                <p class="product-title">Печенье в ассортименте</p>
+                                                <p class="product-description"></p>
+                                            </div>
+                                            <div class="product-chars">
+                                                <p class="product-weight">100 г.</p>
+                                                <p class="product-price">115 руб.</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="product-item">
+                                            <div class="product-header">
+                                                <p class="product-title">Панкота с манговым пюре</p>
+                                                <p class="product-description"></p>
+                                            </div>
+                                            <div class="product-chars">
+                                                <p class="product-weight">50 г.</p>
+                                                <p class="product-price">110 руб.</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="product-item">
+                                            <div class="product-header">
+                                                <p class="product-title">Шоколадный мусс</p>
+                                                <p class="product-description"></p>
+                                            </div>
+                                            <div class="product-chars">
+                                                <p class="product-weight">50.</p>
+                                                <p class="product-price">110 руб.</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="product-item">
+                                            <div class="product-header">
+                                                <p class="product-title">Конфеты, трюфели в ассортименте</p>
+                                                <p class="product-description"></p>
+                                            </div>
+                                            <div class="product-chars">
+                                                <p class="product-weight">10-15 г.</p>
+                                                <p class="product-price">60 руб.</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="product-item">
+                                            <div class="product-header">
+                                                <p class="product-title">Датская выпечка</p>
+                                                <p class="product-description"></p>
+                                            </div>
+                                            <div class="product-chars">
+                                                <p class="product-weight">45 г.</p>
+                                                <p class="product-price">100 руб.</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="product-item">
+                                            <div class="product-header">
+                                                <p class="product-title">Фруктовое плато</p>
+                                                <p class="product-description">Ананас, груша, яблоко, физалис, виноград, мандарин, клубника</p>
+                                            </div>
+                                            <div class="product-chars">
+                                                <p class="product-weight">1000 г.</p>
+                                                <p class="product-price">1800 руб.</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="product-item">
+                                            <div class="product-header">
+                                                <p class="product-title">Ягодно-фруктовое плато</p>
+                                                <p class="product-description">Клубника, голубика, красная смородина, ежевика, виноград, ананас, груша, физалис</p>
+                                            </div>
+                                            <div class="product-chars">
+                                                <p class="product-weight">1000 г.</p>
+                                                <p class="product-price">3500 руб.</p>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <!-- Group End -->
+
+                                <!-- Group Start -->
+                                <div class="product-group">
+                                    <div class="product-category">
+                                        <p data-icon="&#43;">Хлеб</p>
+                                    </div>
+                                    <div class="product-wrapper">
+
+                                        <div class="product-item">
+                                            <div class="product-header">
+                                                <p class="product-title">Хлебная корзина</p>
+                                                <p class="product-description"></p>
+                                            </div>
+                                            <div class="product-chars">
+                                                <p class="product-weight">100 г.</p>
+                                                <p class="product-price">50 руб.</p>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <!-- Group End -->
+
+                            </div>
+                        </div>
+
+                        <!-- Menu List End -->
+
+                        <!-- Menu List Start -->
+                        <div class="menulist-item">
+                            <div class="menulist-title">
+                                <h3>Мороженое</h3>
+                                <img class="arrow-icon" src="assets/img/icons/arrow-down.svg" alt="Открыть" >
+                            </div>
+                            <div class="menulist-content">
+
+                                <!-- Group Start -->
+                                <div class="product-group">
+                                    <div class="product-category">
+                                        <p data-icon="&#43;">Домашнее мороженое</p>
+                                    </div>
+                                    <div class="product-wrapper">
+
+                                        <div class="product-item">
+                                            <div class="product-header">
+                                                <p class="product-title">Ванильное мороженое</p>
+                                                <p class="product-description"></p>
+                                            </div>
+                                            <div class="product-chars">
+                                                <p class="product-weight">50 г.</p>
+                                                <p class="product-price">130 руб.</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="product-item">
+                                            <div class="product-header">
+                                                <p class="product-title">Мороженое "Лесная ягода"</p>
+                                                <p class="product-description"></p>
+                                            </div>
+                                            <div class="product-chars">
+                                                <p class="product-weight">50 г.</p>
+                                                <p class="product-price">130 руб.</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="product-item">
+                                            <div class="product-header">
+                                                <p class="product-title">Банановое мороженое</p>
+                                                <p class="product-description"></p>
+                                            </div>
+                                            <div class="product-chars">
+                                                <p class="product-weight">50 г.</p>
+                                                <p class="product-price">130 руб.</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="product-item">
+                                            <div class="product-header">
+                                                <p class="product-title">Манговое мороженое</p>
+                                                <p class="product-description"></p>
+                                            </div>
+                                            <div class="product-chars">
+                                                <p class="product-weight">50 г.</p>
+                                                <p class="product-price">130 руб.</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="product-item">
+                                            <div class="product-header">
+                                                <p class="product-title">Лаймовый сорбет</p>
+                                                <p class="product-description"></p>
+                                            </div>
+                                            <div class="product-chars">
+                                                <p class="product-weight">50 г.</p>
+                                                <p class="product-price">130 руб.</p>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <!-- Group End -->
+
+                                <!-- Group Start -->
+                                <div class="product-group">
+                                    <div class="product-category">
+                                        <p data-icon="&#43;">Добавки к мороженому</p>
+                                    </div>
+                                    <div class="product-wrapper">
+
+                                        <div class="product-item">
+                                            <div class="product-header">
+                                                <p class="product-title">Топинг манго / шоколад / карамель</p>
+                                                <p class="product-description"></p>
+                                            </div>
+                                            <div class="product-chars">
+                                                <p class="product-weight">50 г.</p>
+                                                <p class="product-price">50 руб.</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="product-item">
+                                            <div class="product-header">
+                                                <p class="product-title">Шоколадная крошка</p>
+                                                <p class="product-description"></p>
+                                            </div>
+                                            <div class="product-chars">
+                                                <p class="product-weight">50 г.</p>
+                                                <p class="product-price">60 руб.</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="product-item">
+                                            <div class="product-header">
+                                                <p class="product-title">Поп-корн в соленой карамеле</p>
+                                                <p class="product-description"></p>
+                                            </div>
+                                            <div class="product-chars">
+                                                <p class="product-weight">50 г.</p>
+                                                <p class="product-price">30 руб.</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="product-item">
+                                            <div class="product-header">
+                                                <p class="product-title">Микс орехов</p>
+                                                <p class="product-description"></p>
+                                            </div>
+                                            <div class="product-chars">
+                                                <p class="product-weight">50 г.</p>
+                                                <p class="product-price">110 руб.</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="product-item">
+                                            <div class="product-header">
+                                                <p class="product-title">Маршмелоу</p>
+                                                <p class="product-description"></p>
+                                            </div>
+                                            <div class="product-chars">
+                                                <p class="product-weight">50 г.</p>
+                                                <p class="product-price">70 руб.</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="product-item">
+                                            <div class="product-header">
+                                                <p class="product-title">Свежая ягода</p>
+                                                <p class="product-description"></p>
+                                            </div>
+                                            <div class="product-chars">
+                                                <p class="product-weight">50 г.</p>
+                                                <p class="product-price">110 руб.</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="product-item">
+                                            <div class="product-header">
+                                                <p class="product-title">Ягодный соус Ротте Грюце</p>
+                                                <p class="product-description"></p>
+                                            </div>
+                                            <div class="product-chars">
+                                                <p class="product-weight">50 г.</p>
+                                                <p class="product-price">75 руб.</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="product-item">
+                                            <div class="product-header">
+                                                <p class="product-title">Салат из свежих фруктов</p>
+                                                <p class="product-description"></p>
+                                            </div>
+                                            <div class="product-chars">
+                                                <p class="product-weight">50 г.</p>
+                                                <p class="product-price">50 руб.</p>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <!-- Group End -->
+
+                            </div>
+                        </div>
+
+                        <!-- Menu List End -->
+
+                        <!-- Menu List Start -->
+                        <div class="menulist-item">
+                            <div class="menulist-title">
+                                <h3>Доставка еды</h3>
+                                <img class="arrow-icon" src="assets/img/icons/arrow-down.svg" alt="Открыть" >
+                            </div>
+                            <div class="menulist-content">
+
+                                <!-- Group Start -->
+                                <div class="product-group">
+                                    <div class="product-category">
+                                        <p data-icon="&#43;">Холодные закуски</p>
+                                    </div>
+                                    <div class="product-wrapper">
+
+                                        <div class="product-item">
+                                            <div class="product-header">
+                                                <p class="product-title">Салат цезарь с куриной грудкой</p>
+                                                <p class="product-description">Доставляются не заправленные для сохранения зелени</p>
+                                            </div>
+                                            <div class="product-chars">
+                                                <p class="product-weight">150 г.</p>
+                                                <p class="product-price"></p>
+                                            </div>
+                                        </div>
+
+                                        <div class="product-item">
+                                            <div class="product-header">
+                                                <p class="product-title">Салат с ростбифом</p>
+                                                <p class="product-description">Доставляются не заправленные для сохранения зелени</p>
+                                            </div>
+                                            <div class="product-chars">
+                                                <p class="product-weight">150 г.</p>
+                                                <p class="product-price"></p>
+                                            </div>
+                                        </div>
+
+                                        <div class="product-item">
+                                            <div class="product-header">
+                                                <p class="product-title">Салат с семгой слабосоленой</p>
+                                                <p class="product-description">Доставляются не заправленные для сохранения зелени</p>
+                                            </div>
+                                            <div class="product-chars">
+                                                <p class="product-weight">150 г.</p>
+                                                <p class="product-price"></p>
+                                            </div>
+                                        </div>
+
+                                        <div class="product-item">
+                                            <div class="product-header">
+                                                <p class="product-title">Салат оливье</p>
+                                                <p class="product-description"></p>
+                                            </div>
+                                            <div class="product-chars">
+                                                <p class="product-weight">150 г.</p>
+                                                <p class="product-price"></p>
+                                            </div>
+                                        </div>
+
+                                        <div class="product-item">
+                                            <div class="product-header">
+                                                <p class="product-title">Салат Сельдь под шубой</p>
+                                                <p class="product-description"></p>
+                                            </div>
+                                            <div class="product-chars">
+                                                <p class="product-weight">150 г.</p>
+                                                <p class="product-price"></p>
+                                            </div>
+                                        </div>
+
+                                        <div class="product-item">
+                                            <div class="product-header">
+                                                <p class="product-title">Семга слабосоленая в укропном маринаде</p>
+                                                <p class="product-description"></p>
+                                            </div>
+                                            <div class="product-chars">
+                                                <p class="product-weight">500 г.</p>
+                                                <p class="product-price">1600 руб.</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="product-item">
+                                            <div class="product-header">
+                                                <p class="product-title">Ростбиф из говядины с маринованым луком</p>
+                                                <p class="product-description"></p>
+                                            </div>
+                                            <div class="product-chars">
+                                                <p class="product-weight">500 г.</p>
+                                                <p class="product-price">1600 руб.</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="product-item">
+                                            <div class="product-header">
+                                                <p class="product-title">Домашняя буженина</p>
+                                                <p class="product-description"></p>
+                                            </div>
+                                            <div class="product-chars">
+                                                <p class="product-weight">500 г.</p>
+                                                <p class="product-price">690 руб.</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="product-item">
+                                            <div class="product-header">
+                                                <p class="product-title">Паштет из куриной печени с луковым конфитюром</p>
+                                                <p class="product-description"></p>
+                                            </div>
+                                            <div class="product-chars">
+                                                <p class="product-weight">500 г.</p>
+                                                <p class="product-price">480 руб.</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="product-item">
+                                            <div class="product-header">
+                                                <p class="product-title">Оливковый Тапенад</p>
+                                                <p class="product-description"></p>
+                                            </div>
+                                            <div class="product-chars">
+                                                <p class="product-weight">100 г.</p>
+                                                <p class="product-price">280 руб.</p>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <!-- Group End -->
+
+                                <!-- Group Start -->
+                                <div class="product-group">
+                                    <div class="product-category">
+                                        <p data-icon="&#43;">Горячее</p>
+                                    </div>
+                                    <div class="product-wrapper">
+
+                                        <div class="product-item">
+                                            <div class="product-header">
+                                                <p class="product-title">Утка маринованая, подается с клюквенным соусом</p>
+                                                <p class="product-description">Готовая или сырая с инструкцией по приготовленю</p>
+                                            </div>
+                                            <div class="product-chars">
+                                                <p class="product-weight">2000 г.</p>
+                                                <p class="product-price">1500 руб.</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="product-item">
+                                            <div class="product-header">
+                                                <p class="product-title">Цыпленок маринованный в гочичном маринаде с розмарином и чесноком</p>
+                                                <p class="product-description">Указан вес сырого цыпленка</p>
+                                            </div>
+                                            <div class="product-chars">
+                                                <p class="product-weight">450 г.</p>
+                                                <p class="product-price">430 руб.</p>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <!-- Group End -->
+
+                                <!-- Group Start -->
+                                <div class="product-group">
+                                    <div class="product-category">
+                                        <p data-icon="&#43;">Пироги</p>
+                                    </div>
+                                    <div class="product-wrapper">
+
+                                        <div class="product-item">
+                                            <div class="product-header">
+                                                <p class="product-title">Пирог с курицей и сыром</p>
+                                                <p class="product-description"></p>
+                                            </div>
+                                            <div class="product-chars">
+                                                <p class="product-weight">1100 г.</p>
+                                                <p class="product-price">650 руб.</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="product-item">
+                                            <div class="product-header">
+                                                <p class="product-title">Пирог со свининой и картофелем</p>
+                                                <p class="product-description"></p>
+                                            </div>
+                                            <div class="product-chars">
+                                                <p class="product-weight">1100 г.</p>
+                                                <p class="product-price">650 руб.</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="product-item">
+                                            <div class="product-header">
+                                                <p class="product-title">Пирог с рыбой</p>
+                                                <p class="product-description"></p>
+                                            </div>
+                                            <div class="product-chars">
+                                                <p class="product-weight">1100 г.</p>
+                                                <p class="product-price">650 руб.</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="product-item">
+                                            <div class="product-header">
+                                                <p class="product-title">Пирог с индейкой и овощами</p>
+                                                <p class="product-description"></p>
+                                            </div>
+                                            <div class="product-chars">
+                                                <p class="product-weight">1100 г.</p>
+                                                <p class="product-price">650 руб.</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="product-item">
+                                            <div class="product-header">
+                                                <p class="product-title">Пирог с капустой и яйцом</p>
+                                                <p class="product-description"></p>
+                                            </div>
+                                            <div class="product-chars">
+                                                <p class="product-weight">1100 г.</p>
+                                                <p class="product-price">450 руб.</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="product-item">
+                                            <div class="product-header">
+                                                <p class="product-title">Пирог с яйцом и зеленым луком</p>
+                                                <p class="product-description"></p>
+                                            </div>
+                                            <div class="product-chars">
+                                                <p class="product-weight">1100 г.</p>
+                                                <p class="product-price">450 руб.</p>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <!-- Group End -->
+
+                                <!-- Group Start -->
+                                <div class="product-group">
+                                    <div class="product-category">
+                                        <p data-icon="&#43;">Напитки</p>
+                                    </div>
+                                    <div class="product-wrapper">
+
+                                        <div class="product-item">
+                                            <div class="product-header">
+                                                <p class="product-title">Морс из клюквы</p>
+                                                <p class="product-description"></p>
+                                            </div>
+                                            <div class="product-chars">
+                                                <p class="product-weight">1000 мл.</p>
+                                                <p class="product-price">350 руб.</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="product-item">
+                                            <div class="product-header">
+                                                <p class="product-title">Морс из облепихи</p>
+                                                <p class="product-description"></p>
+                                            </div>
+                                            <div class="product-chars">
+                                                <p class="product-weight">1000 мл.</p>
+                                                <p class="product-price">350 руб.</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="product-item">
+                                            <div class="product-header">
+                                                <p class="product-title">Морс из черной смородины</p>
+                                                <p class="product-description"></p>
+                                            </div>
+                                            <div class="product-chars">
+                                                <p class="product-weight">1000 мл.</p>
+                                                <p class="product-price">310 руб.</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="product-item">
+                                            <div class="product-header">
+                                                <p class="product-title">Морс из вишни</p>
+                                                <p class="product-description"></p>
+                                            </div>
+                                            <div class="product-chars">
+                                                <p class="product-weight">1000 мл.</p>
+                                                <p class="product-price">310 руб.</p>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <!-- Group End -->
+
+                            </div>
+                        </div>
+
+                        <!-- Menu List End -->
+
 
                     </div>
                 </div>
@@ -256,7 +2593,7 @@
         <!-- JS -->
         <script src="assets/js/callModal.js"></script>
         <script src="assets/js/menuModal.js"></script>
-        <script src="assets/js/scrollToContacts.js"></script>
+        <script src="assets/js/scroll.js"></script>
         <script src="assets/js/menuPage.js"></script>
     </body>
 </html>
