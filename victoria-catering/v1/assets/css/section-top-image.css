@@ -53,6 +53,10 @@
 }
 
 @media screen and (max-width: 425px) {
+    .section-top-image {
+        height: 300px;
+    }
+
     .section-top-image h1 {
         font-size: 35px;
     }
