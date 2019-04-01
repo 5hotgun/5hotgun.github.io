@@ -1,0 +1,129 @@
+.roadmap-wrapper {
+    width: 100%;
+}
+
+.roadmap-row {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-bottom: 20px;
+}
+
+.roadmap-row:nth-child(even) {
+    flex-direction: row-reverse;
+}
+
+.roadmap-row:nth-child(even) .roadmap-block {
+    margin-left: 40px;
+    margin-right: 0;
+}
+
+.roadmap-row:nth-child(odd) .roadmap-block .roadmap-header {
+    text-align: right;
+}
+
+.roadmap-block {
+    width: calc(50% - 70px);
+    min-height: 250px;
+    border: 1px solid rgba(0,0,0,.2);
+    border-radius: 5px;
+    margin-right: 40px;
+    /* padding: 20px;
+    box-sizing: border-box; */
+    overflow: hidden;
+}
+
+    .roadmap-header {
+        padding: 10px 20px;
+        margin-bottom: 20px;
+        background-color: #343148;
+    }
+
+        .roadmap-header p {
+            font-size: 18px;
+            color: #fff;
+            font-weight: 500;
+        }
+
+    .roadmap-content {
+        padding: 0 20px;
+        font-size: 18px;
+        line-height: 1.4em;
+        color: #343148;
+    }
+
+        .roadmap-place p {
+
+            margin-bottom: 20px;
+        }
+
+        .roadmap-speciality p {
+            margin-bottom: 20px;
+        }
+
+        .roadmap-speciality p span {
+            font-weight: 500;
+        }
+
+
+.roadmap-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: 1px solid rgba(0,0,0,.2);
+    box-sizing: border-box;
+    padding: 15px;
+    position: relative;
+}
+
+    .roadmap-icon:after {
+        content: '';
+        width: 2px;
+        height: 200px;
+        position: absolute;
+        bottom: -205px;
+        left: 29px;
+        background-color: #46415f;
+    }
+
+    .roadmap-icon img {
+        width: 100%;
+    }
+
+@media screen and (max-width: 767px) {
+    .roadmap-row {
+        justify-content: space-between;
+        align-items: flex-start;
+
+    }
+
+    .roadmap-row:nth-child(odd) {
+        flex-direction: row-reverse;
+        /* flex-direction: column; */
+
+    }
+
+    .roadmap-block {
+        width: calc(100% - 50px);
+        margin-left: 0!important;
+        margin-right: 0;
+    }
+
+        .roadmap-icon {
+            width: 40px;
+            height: 40px;
+            padding: 10px;
+            /* margin-bottom: 20px; */
+        }
+
+        .roadmap-icon:after {
+            /* display: none; */
+            left: 19px;
+            bottom: -215px;
+        }
+}
+
+@media screen and (max-width: 425px) {
+
+}

@@ -71,7 +71,7 @@ footer {
         display: flex;
         align-items: center;
         justify-content: flex-start;
-        margin-bottom: 20px;
+        margin-bottom: 30px;
     }
 
     .social-item {
@@ -90,18 +90,12 @@ footer {
     .dev-link p {
         font-size: 14px;
         color: #fff;
-        margin-bottom: 5px;
+        margin-bottom: 15px;
     }
 
-    .dev-link a {
-        color: #fff;
-        font-size: 14px;
-        text-decoration: none;
-        transition: linear .2s;
-    }
+    .dev-link img {
+        width: 200px;
 
-    .dev-link a:hover {
-        color: #DF8600;
     }
 
 .footer-copyright {
