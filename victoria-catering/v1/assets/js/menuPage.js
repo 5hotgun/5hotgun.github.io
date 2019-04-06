@@ -1,17 +1,17 @@
 // Текущая позиция на странице
 let currentLocation;
 // Функция при скролле
-window.onscroll = function (e) {
-    // Обновить текущую позицию
-    currentLocation = window.pageYOffset;
-}
+// window.onscroll = function (e) {
+//     // Обновить текущую позицию
+//
+// }
 
 // Триггер главного списка
 let menuTitle = document.getElementsByClassName('menulist-title');
 // Триггер списка с продуктами
 let menuGroupTitle = document.getElementsByClassName('product-category');
 // Кнопка скрытия всех контейнеров
-let closeBtn = document.getElementById('closeAllLists');
+let closeBtn = document.getElementById('toTop');
 
 // Найти позицию элемента
 const findElemPos = elem => {
@@ -26,32 +26,32 @@ const findElemPos = elem => {
 };
 
 // Скорлл к открытому главному контейнеру
-const scroll = elem => {
-    let position = findElemPos(elem);
-    if(currentLocation == undefined) currentLocation = window.pageYOffset;
-    let i = currentLocation;
-    let s = 10;
-    if(currentLocation <= position) {
-        const interval = setInterval(function() {
-        	s += 0.2;
-            window.scrollTo(0, i);
-            i += s;
-            if (i+100 >= position) {
-                clearInterval(interval);
-            };
-        }, 15);
-    } else {
-        const interval = setInterval(function() {
-            console.log('e');
-        	s += 0.2;
-            window.scrollTo(0, i);
-            i -= s;
-            if (i+100 <= position) {
-                clearInterval(interval);
-            };
-        }, 15);
-    }
-};
+// const scroll = elem => {
+//     let position = findElemPos(elem);
+//     if(currentLocation == undefined) currentLocation = window.pageYOffset;
+//     let i = currentLocation;
+//     let s = 10;
+//     if(currentLocation <= position) {
+//         const interval = setInterval(function() {
+//         	s += 0.2;
+//             window.scrollTo(0, i);
+//             i += s;
+//             if (i+100 >= position) {
+//                 clearInterval(interval);
+//             };
+//         }, 15);
+//     } else {
+//         const interval = setInterval(function() {
+//             console.log('e');
+//         	s += 0.2;
+//             window.scrollTo(0, i);
+//             i -= s;
+//             if (i+100 <= position) {
+//                 clearInterval(interval);
+//             };
+//         }, 15);
+//     }
+// };
 
 
 // Получить параметры элемента
@@ -126,7 +126,8 @@ const toggleElement = (list, elem, height) => {
     } else {
         // Установить аттрибуты
         changeAttribute('set', elem, elemChild);
-        if(list === 'main') scroll(elemParent);
+        // Если кликнут триггер главного контейнера, скролл к началу
+        if(list === 'main') scrollWin(elem.id);
     }
 };
 
@@ -167,22 +168,22 @@ const hideElement = (elem, height, elemChild) => {
 
 
 // // Добавить событие клик на кнопку
-// closeBtn.addEventListener('click', () => {
-//     // Цикл по массиву главных контейнеров
-//     Array.from(menuTitle).forEach(elem => {
-//         // Найти дочерний элемент (изображение - стрелка)
-//         let elemChild = elem.lastChild.previousElementSibling;
-//         // Скрыть все главные контейнеры
-//         hideElement(elem, '80px', elemChild);
-//     });
-//     // Цикл по массиву внутренних контейнеров
-//     Array.from(menuGroupTitle).forEach(elem => {
-//         // Найти дочерний элемент (параграф)
-//         let elemChild = elem.lastChild.previousElementSibling;
-//         // Скрыть все внутренние контейнеры
-//         hideElement(elem, '35px', elemChild);
-//     });
-//     // Скрыть кнопку закрытия всех контейнеров
-//     closeBtn.style.display = 'none';
-//
-// });
+closeBtn.addEventListener('click', () => {
+    // Цикл по массиву главных контейнеров
+    Array.from(menuTitle).forEach(elem => {
+        // Найти дочерний элемент (изображение - стрелка)
+        let elemChild = elem.lastChild.previousElementSibling;
+        // Скрыть все главные контейнеры
+        hideElement(elem, '80px', elemChild);
+    });
+    // Цикл по массиву внутренних контейнеров
+    Array.from(menuGroupTitle).forEach(elem => {
+        // Найти дочерний элемент (параграф)
+        let elemChild = elem.lastChild.previousElementSibling;
+        // Скрыть все внутренние контейнеры
+        hideElement(elem, '35px', elemChild);
+    });
+    // Скрыть кнопку закрытия всех контейнеров
+    closeBtn.style.display = 'none';
+
+});

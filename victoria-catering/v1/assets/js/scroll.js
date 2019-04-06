@@ -2,7 +2,9 @@ let mylocation;
 
 window.onscroll = function (e) {
     mylocation = window.pageYOffset;
-}
+    let btnStatus = mylocation > 300 ? 'block' : 'none';
+    document.getElementById('toTop').style.display = btnStatus;
+};
 function scrollWin(id) {
     // Спратать меню
     document.getElementById('menuModal').style.left = `-100%`;
@@ -16,7 +18,7 @@ function scrollWin(id) {
         	sum+=0.2;
             window.scrollTo(0, i);
             i += sum;
-            if (i+40 >= pos[0]) {
+            if (i+90 >= pos[0]) {
                 clearInterval(int);
             };
         }, 0);
@@ -25,12 +27,12 @@ function scrollWin(id) {
         	sum += 0.2;
             window.scrollTo(0, i);
             i -= sum;
-            if (i+40 <= pos[0]) {
+            if (i+90 <= pos[0]) {
                 clearInterval(int);
             };
         }, 0);
     }
-}
+};
 const findPos = obj => {
     let curtop = 0;
     if (obj.offsetParent) {
@@ -40,4 +42,7 @@ const findPos = obj => {
 
         return [curtop];
     }
-}
+};
+const scrollTop = () => {
+    scrollWin('pageTop');
+};

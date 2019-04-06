@@ -63,6 +63,10 @@
                 justify-content: flex-start;
     }
 
+    .aside-active-link {
+        color: #DF8600!important;
+    }
+
 
 @media screen and (max-width: 1024px) {
     .menu-modal {

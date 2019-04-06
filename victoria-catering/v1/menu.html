@@ -63,7 +63,7 @@
                 <nav>
                     <ul class="navigation-list">
                         <li><a href="formats.html">Форматы</a> </li>
-                        <li><a href="menu.html">Меню</a> </li>
+                        <li><a class="active-link">Меню</a> </li>
                         <li><a href="about.html">О нас</a> </li>
                         <li><a onclick="scrollWin('contacts');">Контакты</a> </li>
                         <li><a href="request.html">Заказать</a> </li>
@@ -143,7 +143,7 @@
                     <ul class="aside-menu-navigation">
                         <li><a href="index.html">Главная</a> </li>
                         <li><a href="formats.html">Форматы</a> </li>
-                        <li><a href="menu.html">Меню</a> </li>
+                        <li><a class="aside-active-link">Меню</a> </li>
                         <li><a href="about.html">О нас</a> </li>
                         <li><a onclick="scrollWin('contacts');">Контакты</a> </li>
                         <li> <a href="request.html">Заказать</a> </li>
@@ -161,12 +161,21 @@
                     </div>
                 </div>
             </div>
+
+            <!-- Кнопка вверх -->
+            <div class="btn-totop" id="toTop" onclick="scrollWin('pageTop');">
+                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 129 129" xmlns:xlink="http://www.w3.org/1999/xlink" enable-background="new 0 0 129 129">
+                  <g>
+                    <path fill="#fff" d="m121.3,34.6c-1.6-1.6-4.2-1.6-5.8,0l-51,51.1-51.1-51.1c-1.6-1.6-4.2-1.6-5.8,0-1.6,1.6-1.6,4.2 0,5.8l53.9,53.9c0.8,0.8 1.8,1.2 2.9,1.2 1,0 2.1-0.4 2.9-1.2l53.9-53.9c1.7-1.6 1.7-4.2 0.1-5.8z"/>
+                  </g>
+                </svg>
+            </div>
         </header>
 
         <main>
 
             <!-- Обложка -->
-            <section class="section-top-image top-menu">
+            <section class="section-top-image top-menu" id="pageTop">
                 <h1>Кейтеринг меню</h1>
             </section>
 
@@ -184,7 +193,7 @@
                     <div class="menu-container" id="menuContainer">
                         <!-- Menu List Start -->
                         <div class="menulist-item">
-                            <div class="menulist-title">
+                            <div class="menulist-title" id="coffeeBreak">
                                 <h3>Кофе-брейк</h3>
                                 <img class="arrow-icon" src="assets/img/icons/arrow-down.svg" alt="Открыть" >
                             </div>
@@ -538,7 +547,7 @@
 
                         <!-- Menu List Start -->
                         <div class="menulist-item">
-                            <div class="menulist-title">
+                            <div class="menulist-title" id="furshet">
                                 <h3>Фуршет</h3>
                                 <img class="arrow-icon" src="assets/img/icons/arrow-down.svg" alt="Открыть" >
                             </div>
@@ -1310,7 +1319,7 @@
 
                         <!-- Menu List Start -->
                         <div class="menulist-item">
-                            <div class="menulist-title">
+                            <div class="menulist-title" id="banket">
                                 <h3>Банкет</h3>
                                 <img class="arrow-icon" src="assets/img/icons/arrow-down.svg" alt="Открыть" >
                             </div>
@@ -2027,7 +2036,7 @@
 
                         <!-- Menu List Start -->
                         <div class="menulist-item">
-                            <div class="menulist-title">
+                            <div class="menulist-title" id="morojenoe">
                                 <h3>Мороженое</h3>
                                 <img class="arrow-icon" src="assets/img/icons/arrow-down.svg" alt="Открыть" >
                             </div>
@@ -2205,7 +2214,7 @@
 
                         <!-- Menu List Start -->
                         <div class="menulist-item">
-                            <div class="menulist-title">
+                            <div class="menulist-title" id="dostavka">
                                 <h3>Доставка еды</h3>
                                 <img class="arrow-icon" src="assets/img/icons/arrow-down.svg" alt="Открыть" >
                             </div>
@@ -2581,7 +2590,7 @@
                         </div>
                         <div class="dev-link">
                             <p>Разработка сайта</p>
-                            <a href="#">Dewoid Websites</a>
+                            <a href="#"><img src="assets/img/dewoid-web.svg" alt=""> </a>
                         </div>
                     </div>
                 </div>
