@@ -54,8 +54,10 @@ header {
         background-color: #DF8600;
         cursor: pointer;
         padding: 10px;
-        box-sizing: border-box;
-        transform: rotate(180deg);
+        -webkit-box-sizing: border-box;
+                box-sizing: border-box;
+        -webkit-transform: rotate(180deg);
+                transform: rotate(180deg);
         display: none;
     }
 

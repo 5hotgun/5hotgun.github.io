@@ -102,9 +102,11 @@
         border: 1px solid rgba(0,0,0,.2);
         border-radius: 5px;
         padding: 10px;
-        box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+                box-sizing: border-box;
         font-size: 16px;
         color: #343148;
+        -webkit-transition: linear .2s;
         transition: linear .2s;
     }
 
@@ -125,6 +127,7 @@
         background-color: #DF8600;
         color: #fff;
         font-size: 18px;
+        -webkit-transition: linear .2s;
         transition: linear .2s;
     }
 
@@ -153,6 +156,7 @@
         background-color: #DF8600;
         color: #fff;
         font-size: 18px;
+        -webkit-transition: linear .2s;
         transition: linear .2s;
     }
 
@@ -162,9 +166,15 @@
 
     .call-modal-contacts ul li {
         margin-bottom: 10px;
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
-        align-items: center;
-        justify-content: flex-start;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
+        -webkit-box-pack: start;
+            -ms-flex-pack: start;
+                justify-content: flex-start;
     }
 
     .call-modal-contacts ul li p {

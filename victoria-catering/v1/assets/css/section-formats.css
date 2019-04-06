@@ -93,6 +93,7 @@
             outline: none;
             border: none;
             margin: 0 auto 20px;
+            -webkit-transition: linear .2s;
             transition: linear .2s;
         }
 

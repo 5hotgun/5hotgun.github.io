@@ -1,12 +1,19 @@
 .section-request {
+    background-image: -webkit-gradient(linear, left bottom, right top, from(#343148), color-stop(#3f3c58), color-stop(#4b4769), color-stop(#57527a), to(#635e8b));
     background-image: linear-gradient(to right top, #343148, #3f3c58, #4b4769, #57527a, #635e8b);
 }
 
 .request-container {
     width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    align-items: center;
-    justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
 
     margin-bottom: 60px;
     border-radius: 5px;
@@ -15,10 +22,17 @@
     .form-text {
         width: calc(100% - 600px);
         /* height: 790px; */
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
-        align-items: center;
-        justify-content: center;
-        box-sizing: border-box;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
+        -webkit-box-pack: center;
+            -ms-flex-pack: center;
+                justify-content: center;
+        -webkit-box-sizing: border-box;
+                box-sizing: border-box;
         /* padding: 0 60px; */
         position: relative;
         padding: 0 50px;
@@ -32,7 +46,8 @@
     .request-form {
         width: 600px;
         padding: 20px;
-        box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+                box-sizing: border-box;
         margin-top: 10px;
         margin-right: 10px;
         margin-bottom: 10px;
@@ -58,7 +73,8 @@
         margin-bottom: 10px;
         font-size: 18px;
         padding: 5px;
-        box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+                box-sizing: border-box;
         color: #343148;
     }
 
@@ -69,9 +85,11 @@
         border: 1px solid rgba(0,0,0,.4);
         border-radius: 5px;
         padding: 10px;
-        box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+                box-sizing: border-box;
         font-size: 16px;
         color: #343148;
+        -webkit-transition: linear .2s;
         transition: linear .2s;
     }
 
@@ -92,6 +110,7 @@
         background-color: #DF8600;
         color: #fff;
         font-size: 18px;
+        -webkit-transition: linear .2s;
         transition: linear .2s;
     }
 
@@ -112,7 +131,10 @@
 
 @media screen and (max-width: 768px) {
     .request-container {
-        flex-direction: column;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column;
         padding-bottom: 20px;
     }
 

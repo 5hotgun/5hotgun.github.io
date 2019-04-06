@@ -13,16 +13,23 @@
     background-size: cover;
     background-repeat: no-repeat;
     margin: 0 auto 60px;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    align-items: center;
-    justify-content: flex-start;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
     border-radius: 5px;
 }
 
 .order-text {
     width: 300px;
     margin-left: 100px;
-    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
 }
 
 .order-text h3 {
@@ -39,6 +46,7 @@
     background-color: #DF8600;
     text-decoration: none;
     border-radius: 5px;
+    -webkit-transition: linear .2s;
     transition: linear .2s;
     /* font-weight: 300; */
 }
@@ -70,7 +78,8 @@
         margin-left: 0;
         width: 100%;
         padding: 15px;
-        box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+                box-sizing: border-box;
         text-align: center;
     }
 }

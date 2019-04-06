@@ -4,14 +4,23 @@
 
 .roadmap-row {
     width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    align-items: center;
-    justify-content: flex-start;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
     margin-bottom: 20px;
 }
 
 .roadmap-row:nth-child(even) {
-    flex-direction: row-reverse;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: row-reverse;
+            flex-direction: row-reverse;
 }
 
 .roadmap-row:nth-child(even) .roadmap-block {
@@ -72,7 +81,8 @@
     height: 60px;
     border-radius: 50%;
     border: 1px solid rgba(0,0,0,.2);
-    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
     padding: 15px;
     position: relative;
 }
@@ -93,13 +103,20 @@
 
 @media screen and (max-width: 767px) {
     .roadmap-row {
-        justify-content: space-between;
-        align-items: flex-start;
+        -webkit-box-pack: justify;
+            -ms-flex-pack: justify;
+                justify-content: space-between;
+        -webkit-box-align: start;
+            -ms-flex-align: start;
+                align-items: flex-start;
 
     }
 
     .roadmap-row:nth-child(odd) {
-        flex-direction: row-reverse;
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: reverse;
+            -ms-flex-direction: row-reverse;
+                flex-direction: row-reverse;
         /* flex-direction: column; */
 
     }

@@ -8,11 +8,20 @@ footer {
     width: 1200px;
     margin: 0 auto;
     padding-top: 60px;
-    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    justify-content: space-around;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
 }
 
 .footer-column {
@@ -31,9 +40,15 @@ footer {
     }
 
     .contact-item {
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
-        align-items: center;
-        justify-content: flex-start;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
+        -webkit-box-pack: start;
+            -ms-flex-pack: start;
+                justify-content: flex-start;
         margin-bottom: 10px;
     }
 
@@ -44,6 +59,7 @@ footer {
     .footer-navigation li a {
         color: #fff;
         text-decoration: none;
+        -webkit-transition: linear .2s;
         transition: linear .2s;
     }
 
@@ -55,6 +71,7 @@ footer {
             color: #fff;
             text-decoration: none;
             line-height: 1.4em;
+            -webkit-transition: linear .2s;
             transition: linear .2s;
         }
 
@@ -68,9 +85,15 @@ footer {
         }
 
     .social-links {
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
-        align-items: center;
-        justify-content: flex-start;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
+        -webkit-box-pack: start;
+            -ms-flex-pack: start;
+                justify-content: flex-start;
         margin-bottom: 30px;
     }
 
@@ -119,9 +142,13 @@ footer {
 
 @media screen and (max-width: 767px) {
     .footer-container {
-        flex-direction: column;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column;
         padding-left: 30px;
-        box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+                box-sizing: border-box;
     }
 
     .footer-column {
